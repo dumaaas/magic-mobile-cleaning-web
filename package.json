@@ -1,0 +1,27 @@
+{
+  "name": "magic-mobile-cleaning",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/strapi": "^0.3.1",
+    "axios": "^0.21.1",
+    "core-js": "^3.15.1",
+    "node-sass": "^6.0.1",
+    "nuxt": "^2.15.7",
+    "nuxt-gallery": "^2.0.0",
+    "sass-loader": "^10",
+    "v-click-outside": "^3.1.2",
+    "vue-slick-carousel": "^1.0.6",
+    "vuelidate": "^0.7.6"
+  },
+  "devDependencies": {
+    "sass-resources-loader": "^2.2.4"
+  }
+}
