@@ -1,29 +1,26 @@
 <template>
   <header class="header">
     <div class="header-bg">
-      <div class="header-top">
+      <div class="header-top container">
         <div class="header-top__social">
-          <a href=""> Facebook </a>
-          <a href=""> Twitter </a>
-          <a href=""> Instagram </a>
+          <SocialIcons/>
         </div>
         <div class="header-top__contact">
-          <p>Phone: 067/234-234</p>
+          <p>
+            <fa :icon="['fa', 'phone-alt']" /> (773) 209 3754 / (312) 200 2093
+          </p>
         </div>
       </div>
     </div>
-    <div class="header-main">
+    <div class="header-main container">
       <div class="header-main__logo">
         <NuxtLogo />
       </div>
       <div class="header-main__links">
         <ul>
-          <li><nuxt-link to="/aboutus">About us</nuxt-link></li>
-          <li><nuxt-link to="/services">Services</nuxt-link></li>
-          <li>
-            <nuxt-link exact to="/">Before&After</nuxt-link>
+          <li v-for="link in mainLinks" :key="link.name">
+            <nuxt-link :to="`${link.url}`">{{ link.name }}</nuxt-link>
           </li>
-          <li><nuxt-link to="/contact">Contact</nuxt-link></li>
         </ul>
       </div>
     </div>
@@ -32,40 +29,66 @@
 
 <script>
 import NuxtLogo from "@/components/NuxtLogo.vue";
+import SocialIcons from "@/components/SocialIcons.vue";
 
 export default {
   components: {
     NuxtLogo,
+    SocialIcons
+  },
+  data() {
+    return {
+      mainLinks: [
+        {
+          name: "About us",
+          url: "/aboutus",
+        },
+        {
+          name: "Services",
+          url: "/services",
+        },
+        {
+          name: "Before&After",
+          url: "/",
+        },
+        {
+          name: "Contact",
+          url: "/contact",
+        },
+      ],
+    };
   },
 };
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/sass/abstracts/_colors.scss";
+
 .header {
-  ul {
-    list-style: none;
-    li {
-      display: inline-block;
-      color: #6774ff;
-      font-weight: 600;
-      font-size: 18px;
-      margin-left: 20px;
-    }
+  font-weight: 600;
+  background: $secondary;
+  li {
+    display: inline-block;
+    margin-left: 30px;
   }
+
   &-bg {
-    background: #6effff;
+    background: $primary;
   }
   &-top {
-    width: 1200px;
-    margin: 0 auto;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     padding: 5px 0;
     gap: 30px;
+
+    &__contact {
+      svg {
+        margin-right: 7px;
+      }
+    }
   }
   &-main {
-    width: 1200px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
 
@@ -77,6 +100,12 @@ export default {
       display: flex;
       align-items: flex-end;
       padding: 20px 0;
+
+      a:hover {
+        border-bottom: 2px solid #19a3a6;
+        color: #19a3a6;
+        padding-bottom: 20px;
+      }
     }
   }
 }

@@ -12,7 +12,7 @@
 
 <style lang="scss" scoped>
     div {
-        background-color: #6774ff;
+        background-color: #19A3A6;
         color: white;
         font-size: 20px;
         text-transform: uppercase;

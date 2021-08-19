@@ -33,7 +33,10 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    // SCSS file in the project
+    '@/assets/sass/main.scss'
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -45,11 +48,19 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/strapi', '@nuxtjs/axios'],
+  modules: ['@nuxtjs/strapi', '@nuxtjs/axios', '@nuxtjs/fontawesome'],
 
   strapi: {
     entities: ['mains', 'header-links', 'contacts', 'galleries'],
     url: 'http://localhost:1337'
+  },
+
+  fontawesome: {
+    component: 'fa',
+    icons: {
+      solid: ['faPhoneAlt', 'faMapMarkerAlt', 'faEnvelope'],
+      brands: ['faFacebookF', 'faInstagram', 'faYoutube']
+    }
   },
 
   axios: {

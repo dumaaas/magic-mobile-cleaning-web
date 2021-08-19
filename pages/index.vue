@@ -7,10 +7,32 @@
             {{ main.heading }}
             <span> {{ main.span }} </span>
           </h1>
-          <button>{{ main.button }}</button>
+          <button class="btn">{{ main.button }}</button>
         </div>
       </section>
       <Track>{{ track }}</Track>
+      <section class="offers container">
+        <div class="offers-heading">
+          <h3>
+            <span> If you love your care </span>
+            we will make it shine!
+          </h3>
+        </div>
+        <div class="offers-cards">
+          <div
+            class="offers-cards__card"
+            v-for="offer in offerCards"
+            :key="offer.title"
+          >
+            <img
+              :src="require(`@/static/${offer.src}`)"
+              :alt="`${offer.title}`"
+            />
+            <h4>{{ offer.title }}</h4>
+            <p>{{ offer.description }}</p>
+          </div>
+        </div>
+      </section>
       <section class="gallery">
         <div class="gallery-container">
           <div class="gallery-cards">
@@ -22,7 +44,9 @@
               <p>{{ card.title }}</p>
             </div>
           </div>
-          <button id="show-modal" @click="openGallery">Show Gallery</button>
+          <button id="show-modal" @click="openGallery" class="btn btn-invert">
+            Show Gallery
+          </button>
         </div>
       </section>
 
@@ -79,6 +103,28 @@ export default {
       track: "We are open / Monday - Saturday / 8:00 AM - 20:00 PM",
       showGallery: false,
       gallery: [],
+      offerCards: [
+        {
+          title: "Deep cleaning",
+          description: "Lorem ipsum sit amet, consectetur adipisicing...",
+          src: "offer.png",
+        },
+        {
+          title: "Shining",
+          description: "Lorem ipsum sit amet, consectetur adipisicing...",
+          src: "offer.png",
+        },
+        {
+          title: "Refreshing",
+          description: "Lorem ipsum sit amet, consectetur adipisicing...",
+          src: "offer.png",
+        },
+        {
+          title: "Polishing",
+          description: "Lorem ipsum sit amet, consectetur adipisicing...",
+          src: "offer.png",
+        },
+      ],
       galleryCards: [
         {
           title: "Plastic polish",
@@ -123,6 +169,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "@/assets/sass/abstracts/_colors.scss";
+
 .main {
   background: url("~@/assets/cover.jpg") no-repeat center center scroll;
   height: 66vh;
@@ -146,20 +194,6 @@ export default {
     span {
       display: block;
       font-size: 35px;
-    }
-
-    button {
-      display: block;
-      margin-top: 90px;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      background-color: white;
-      padding: 12px 50px;
-      font-size: 16px;
-      border-radius: 20px;
-      font-weight: 700;
-      border: 0px;
-      color: #6774ff;
     }
   }
 }
@@ -195,16 +229,58 @@ export default {
   }
 }
 
-.gallery {
-  button {
-    border: 0px;
-    background-color: #6774ff;
-    padding: 10px 40px;
-    text-transform: uppercase;
-    color: white;
-    border-radius: 20px;
+.offers {
+  padding: 50px 0;
+  &-heading {
+    h3 {
+      color: $primary-darker;
+      text-transform: uppercase;
+      font-weight: 900;
+      text-align: center;
+      span {
+        display: block;
+        font-weight: 500;
+        font-size: 35px;
+      }
+    }
   }
+  &-cards {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+    padding: 40px 0 20px 0;
 
+    &__card {
+      padding: 40px 0;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+    }
+
+    h4 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      color: $primary;
+      padding-top: 25px;
+    }
+    p {
+      color: $primary-darker;
+      padding-top: 10px;
+      font-weight: 500;
+      width: 70%;
+      margin: 0 auto;
+      letter-spacing: 1.2px;
+      line-height: 20px;
+    }
+  }
+}
+
+.gallery {
+  background-color: $primary-lighter;
   &-container {
     padding: 50px 0;
     width: 1200px;
@@ -224,15 +300,14 @@ export default {
       padding-bottom: 40px;
       img {
         border-radius: 20px;
-      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       }
       p {
         text-align: center;
         font-size: 20px;
         font-weight: 700;
         letter-spacing: 1.2px;
-        color: #6774ff;
+        color: $primary;
         padding-top: 10px;
       }
     }
