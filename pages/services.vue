@@ -1,11 +1,12 @@
 <template>
   <main class="">
-    <section class="main">
-      <h1>Services</h1>
+    <section class="container" style="height: 60vh">
+        <h1 style="text-align: center; padding-top: 200px">
+            Services
+        </h1>
     </section>
   </main>
 </template>
-
 <script>
 export default {};
 </script>

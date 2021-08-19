@@ -7,7 +7,7 @@
             {{ main.heading }}
             <span> {{ main.span }} </span>
           </h1>
-          <button class="btn">{{ main.button }}</button>
+          <nuxt-link to="/contact" class="btn">{{ main.button }}</nuxt-link>
         </div>
       </section>
       <Track>{{ track }}</Track>
@@ -179,16 +179,22 @@ export default {
     width: 1200px;
     margin: 0 auto;
 
+    a {
+      margin-top: 50px;
+      float: left;
+      clear: both;
+    }
+
     h1 {
       margin-top: 110px;
       text-transform: uppercase;
       color: white;
       font-weight: 800;
       font-size: 60px;
-      padding: 0 5px;
+      padding: 5px 5px 0;
       border-radius: 10px;
-      background: rgba(0, 0, 0, 0.1);
-      display: inline-block;
+      background: rgba(0, 0, 0, 0.5);
+      float: left;
     }
 
     span {

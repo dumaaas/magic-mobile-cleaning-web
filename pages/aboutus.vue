@@ -1,7 +1,7 @@
 <template>
   <main class="">
-    <section class="main">
-        <h1>
+    <section class="container" style="height: 60vh">
+        <h1 style="text-align: center; padding-top: 200px">
             About us
         </h1>
     </section>
