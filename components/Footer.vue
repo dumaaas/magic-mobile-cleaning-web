@@ -1,25 +1,6 @@
 <template>
   <footer>
     <div class="footer container">
-      <div class="footer-left">
-        <div class="footer-left__contact">
-          <h4>Contact Us</h4>
-          <div class="item" v-for="contact in contacts" :key="contact.name">
-            <span>
-              <fa :icon="['fa', `${contact.iconName}`]" />
-            </span>
-            <p>
-              {{ contact.name }}:
-              <span>
-                {{ contact.content }}
-              </span>
-            </p>
-          </div>
-        </div>
-        <div class="footer-left__social">
-          <SocialIcons mode="icon-darker" />
-        </div>
-      </div>
       <div class="footer-right">
         <h3>
           Want to Book?
@@ -36,39 +17,61 @@
           v-on:submit="handleSubmit"
           v-else
         >
-          <div>
-            <input
-              type="text"
-              v-model="formData.name"
-              placeholder="Name*"
-              name="name"
-            />
-            <input
-              type="email"
-              v-model="formData.email"
-              placeholder="Email*"
-              name="email"
-              required
-            />
+          <div class="inputs">
+            <div class="inputs-flex">
+              <input
+                type="text"
+                v-model="formData.name"
+                placeholder="name"
+                name="name"
+              />
+              <input
+                type="email"
+                v-model="formData.email"
+                placeholder="email"
+                name="email"
+                required
+              />
+            </div>
+            <div class="inputs-flex">
+              <input
+                type="text"
+                v-model="formData.phone"
+                placeholder="phone"
+                name="phone"
+              />
+              <input
+                type="text"
+                v-model="formData.carBrand"
+                placeholder="car model"
+                name="carBrand"
+              />
+            </div>
           </div>
-          <div>
-            <input
-              type="text"
-              v-model="formData.phone"
-              placeholder="Phone*"
-              name="phone"
-            />
-            <input
-              type="text"
-              v-model="formData.carBrand"
-              placeholder="Car Brand"
-              name="carBrand"
-            />
-          </div>
+
           <div>
             <button type="submit" class="btn btn-invert">Send</button>
           </div>
         </form>
+      </div>
+      <div class="footer-left">
+        <div class="footer-left__contact">
+          <h3>Contact Us</h3>
+          <div class="item" v-for="contact in contacts" :key="contact.name">
+            <span>
+              <fa :icon="['fa', `${contact.iconName}`]" />
+            </span>
+            <p>
+              {{ contact.name }}:
+              <span>
+                {{ contact.content }}
+              </span>
+            </p>
+          </div>
+        </div>
+        <div class="footer-left__social">
+          <SocialIcons mode="icon-darker" />
+        </div>
       </div>
     </div>
   </footer>
@@ -138,13 +141,20 @@ export default {
 @import "@/assets/sass/abstracts/_colors.scss";
 
 footer {
-  background-color: $tertiary-darker;
+  background: url("~@/static/footer.png") no-repeat center center scroll;
+
   .footer {
     display: flex;
     justify-content: space-between;
     padding: 60px 0;
-
+    h3 {
+      text-transform: uppercase;
+      color: $secondary;
+      letter-spacing: 1.5px;
+      line-height: 1.875rem;
+    }
     &-left {
+      width: 30%;
       h4 {
         text-transform: uppercase;
         letter-spacing: 1.2px;
@@ -173,12 +183,38 @@ footer {
     }
 
     &-right {
-      h3 {
-        text-transform: uppercase;
-      }
+      width: 50%;
       span {
-        font-size: 18px;
+        font-size: 1.125rem;
+        font-weight: 400;
         display: block;
+      }
+      form {
+        padding-top: 30px;
+        button {
+          margin-top: 30px;
+        }
+      }
+
+      .inputs-top {
+        display: flex;
+        gap: 30px;
+      }
+
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+      }
+
+      .inputs-flex {
+        display: flex;
+        width: 100%;
+        gap: 30px;
+        input {
+          width: 50%;
+        }
       }
     }
   }

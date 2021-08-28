@@ -50,7 +50,9 @@
               This is a complex operation that requires multiple steps. Interior
               detailing is taking care of everything inside the car.
             </p>
-            <a class="btn"> SEE MORE </a>
+            <div>
+              <button class="btn ml-auto btn-primary">SEE MORE</button>
+            </div>
           </div>
         </div>
         <div class="services-cards__card">
@@ -65,25 +67,40 @@
               detailed car can look and smell like a new car, even if it’s aged
               over a decade!
             </p>
-            <a class="btn"> SEE MORE </a>
+            <div>
+              <button class="btn btn-secondary">SEE MORE</button>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section class="gallery">
-      <div class="gallery-container">
+      <div class="gallery-container container">
         <div class="gallery-cards">
-          <div v-for="card in galleryCards" :key="card" class="card">
-            <img
-              :src="require(`@/static/${card.src}`)"
-              :alt="`${card.title}`"
-            />
-            <p>{{ card.title }}</p>
+          <div class="card">
+            <img src="@/static/before.png" alt="Before" />
+          </div>
+          <div class="card">
+            <img src="@/static/after.png" alt="" />
           </div>
         </div>
-        <button id="show-modal" @click="openGallery" class="btn btn-invert">
-          Show Gallery
-        </button>
+        <div class="gallery-bottom">
+          <div class="gallery-bottom__title">
+            <p>Before and After</p>
+          </div>
+          <div class="gallery-bottom__line">
+            <hr />
+          </div>
+          <div class="gallery-bottom__btn">
+            <button
+              id="show-modal"
+              @click="openGallery"
+              class="btn btn-tertiary"
+            >
+              View Gallery
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -212,6 +229,10 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_colors.scss";
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .main {
   background: url("~@/static/cover.png") no-repeat center center scroll;
   height: 66vh;
@@ -231,6 +252,7 @@ export default {
     }
 
     h1 {
+      text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
       margin-top: 8.188rem;
       text-transform: uppercase;
     }
@@ -243,7 +265,7 @@ export default {
 
     span {
       display: block;
-      font-size: 47px;
+      font-size: 2.938rem;
     }
   }
 }
@@ -366,9 +388,8 @@ export default {
         }
         p {
           color: $primary-darker;
-          font-size: 22px;
+          font-size: 1.375rem;
         }
-
       }
       &-left {
         width: 62%;
@@ -388,10 +409,9 @@ export default {
 
 .gallery {
   background-color: $primary-lighter;
+  padding: 50px 0;
+
   &-container {
-    padding: 50px 0;
-    width: 1200px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -402,21 +422,29 @@ export default {
     display: flex;
     width: 100%;
     justify-content: space-between;
-
     .card {
-      padding-bottom: 40px;
-      img {
-        border-radius: 20px;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      }
-      p {
-        text-align: center;
-        font-size: 20px;
-        font-weight: 700;
-        letter-spacing: 1.2px;
-        color: $primary;
-        padding-top: 10px;
-      }
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      border: 6px solid $secondary;
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    p {
+      font-size: 2rem;
+      color: $primary-darker;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    &__line {
+      width: 55%;
+    }
+    hr {
+      border: 1px solid $primary;
     }
   }
 }

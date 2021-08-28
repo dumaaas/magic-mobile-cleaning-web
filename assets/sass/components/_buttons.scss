@@ -2,7 +2,7 @@
   display: block;
   text-transform: uppercase;
   background-color: white;
-  padding: 15px 45px;
+  padding: 11px 45px;
   font-size: 1.125rem;
   border-radius: 50px;
   font-weight: 700;
@@ -27,6 +27,34 @@
       color: $tertiary;
     }
   }
+
+  &.btn-primary {
+    border: 1px solid $primary-darker;
+  }
+
+  &.btn-secondary {
+    border: 1px solid $secondary;
+    background-color: $primary-darker;
+    color: $secondary;
+
+    &:hover {
+      background-color: $secondary;
+      border: 1px solid $secondary;
+      color: $primary-darker;
+    }
+  }
+
+  &.btn-tertiary {
+    border: 1px solid $primary;
+    background-color: transparent;
+    color: $primary;
+    &:hover {
+      background-color: $primary;
+      color: $secondary;
+    }
+  }
+
+
 
   &.btn-invert {
     color: $secondary;
