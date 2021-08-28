@@ -37,6 +37,39 @@
         </div>
       </div>
     </section>
+    <section class="services">
+      <div class="services-cards container">
+        <div class="services-cards__card">
+          <div class="services-cards__card-left">
+            <img src="@/static/interior.png" alt="Interior" />
+          </div>
+          <div class="services-cards__card-right">
+            <h4>Interior</h4>
+            <p>
+              This procedures keep the vehicle in its bestpossible condition.
+              This is a complex operation that requires multiple steps. Interior
+              detailing is taking care of everything inside the car.
+            </p>
+            <a class="btn"> SEE MORE </a>
+          </div>
+        </div>
+        <div class="services-cards__card">
+          <div class="services-cards__card-left revert">
+            <img src="@/static/exterior.png" alt="" />
+          </div>
+          <div class="services-cards__card-right revert">
+            <h4>Exterior</h4>
+            <p>
+              Applying specialized products will enhance your car’s appearance
+              and protect it from future dirt and damage. As a result, a
+              detailed car can look and smell like a new car, even if it’s aged
+              over a decade!
+            </p>
+            <a class="btn"> SEE MORE </a>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="gallery">
       <div class="gallery-container">
         <div class="gallery-cards">
@@ -285,9 +318,70 @@ export default {
     p {
       color: #154455;
       padding-top: 10px;
-      font-size: 1.250rem;
+      font-size: 1.25rem;
       letter-spacing: 0;
       font-weight: normal;
+    }
+  }
+}
+
+.services {
+  background-color: $primary-darker;
+  &-cards {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    &__card {
+      display: flex;
+      justify-content: flex-start;
+      height: 473px;
+      width: 100%;
+      &-right {
+        text-align: right;
+        background-color: $secondary;
+        display: flex;
+        flex-direction: column;
+        gap: 73px;
+        padding: 66px 73px 50px 85px;
+        order: 2;
+        width: 38%;
+        &.revert {
+          background-color: transparent;
+          border: 1px solid $secondary;
+          border-right: 0;
+          text-align: left;
+          order: 1;
+          padding: 66px 85px 50px 73px;
+          h4 {
+            color: $secondary;
+          }
+          p {
+            color: $secondary;
+          }
+        }
+        h4 {
+          color: $primary-darker;
+          text-transform: uppercase;
+        }
+        p {
+          color: $primary-darker;
+          font-size: 22px;
+        }
+
+      }
+      &-left {
+        width: 62%;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+        order: 1;
+        &.revert {
+          order: 2;
+        }
+      }
     }
   }
 }
