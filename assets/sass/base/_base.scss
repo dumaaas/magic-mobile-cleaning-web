@@ -8,12 +8,12 @@
 }
 
 a {
-  color: $link;
+  color: $secondary;
   text-decoration: none;
   cursor: pointer;
 
   &:hover {
-    color: darken($link, 12%);
+    color: $primary;
   }
 
   &:hover,

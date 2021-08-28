@@ -19,15 +19,16 @@ export default {
 
 <style>
 a.nuxt-link-exact-active {
-  border-bottom: 2px solid #19a3a6;
+  border-bottom: 4px solid #19a3a6;
   color: #19a3a6;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
 }
 
 .container {
-  width: 1200px;
+  width: 1400px;
   margin: 0 auto;
 }
+
 
 </style>
 

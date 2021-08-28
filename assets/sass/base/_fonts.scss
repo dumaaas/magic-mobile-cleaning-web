@@ -1,63 +1,88 @@
-// @font-face {
-//   font-family: 'TeleGroteskNext';
-//   src: url('~assets/fonts/TeleGroteskNext-Regular.woff2') format('woff2'),
-//   url('~assets/fonts/TeleGroteskNext-Regular.woff') format('woff');
-//   font-weight: normal;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'MyriadPro';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Myriad Pro Regular'), url('~assets/fonts/MYRIADPRO-REGULAR.woff') format('woff');
+}
 
-// @font-face {
-//   font-family: 'TeleGroteskNext';
-//   src: url('~assets/fonts/TeleGroteskNext-RegularItalic.woff2') format('woff2'),
-//   url('~assets/fonts/TeleGroteskNext-RegularItalic.woff') format('woff');
-//   font-weight: normal;
-//   font-style: italic;
-// }
+@font-face {
+  font-family: 'MyriadPro';
+  font-style: italic;
+  font-weight: normal;
+  src: local('Myriad Pro Condensed Italic'), url('~assets/fonts/MYRIADPRO-CONDIT.woff') format('woff');
+}
 
-// @font-face {
-//   font-family: 'TeleGroteskNext';
-//   src: url('~assets/fonts/TeleGroteskNext-Bold.woff2') format('woff2'),
-//   url('~assets/fonts/TeleGroteskNext-Bold.woff') format('woff');
-//   font-weight: bold;
-//   font-style: normal;
-// }
 
-// @font-face {
-//   font-family: 'TeleGroteskNext';
-//   src: url('~assets/fonts/TeleGroteskNext-BoldItalic.woff2') format('woff2'),
-//   url('~assets/fonts/TeleGroteskNext-BoldItalic.woff') format('woff');
-//   font-weight: bold;
-//   font-style: italic;
-// }
+@font-face {
+  font-family: 'MyriadPro';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Myriad Pro Light'), url('~assets/fonts/MyriadPro-Light.woff') format('woff');
+}
 
-// @font-face {
-//   font-family: 'TeleGroteskNext';
-//   src: url('~assets/fonts/TeleGroteskNext-Ultra.woff2') format('woff2'),
-//   url('~assets/fonts/TeleGroteskNext-Ultra.woff') format('woff');
-//   font-weight: 900;
-//   font-style: normal;
-// }
 
-// @font-face {
-//   font-family: 'TeleGroteskNext';
-//   src: url('~assets/fonts/TeleGroteskNext-Medium.woff2') format('woff2'),
-//   url('~assets/fonts/TeleGroteskNext-Medium.woff') format('woff');
-//   font-weight: 600;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'MyriadPro';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Myriad Pro Semibold'), url('~assets/fonts/MYRIADPRO-SEMIBOLD.woff') format('woff');
+}
 
-// @font-face {
-//   font-family: 'TeleGroteskNext';
-//   src: url('~assets/fonts/TeleGroteskNext-MediumItalic.woff2') format('woff2'),
-//   url('~assets/fonts/TeleGroteskNext-MediumItalic.woff') format('woff');
-//   font-weight: 600;
-//   font-style: italic;
-// }
 
-// @font-face {
-//   font-family: 'TeleGroteskNext';
-//   src: url('~assets/fonts/TeleGroteskNext-Thin.woff2') format('woff2'),
-//   url('~assets/fonts/TeleGroteskNext-Thin.woff') format('woff');
-//   font-weight: 100;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'MyriadPro';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Myriad Pro Semibold Italic'), url('~assets/fonts/MYRIADPRO-SEMIBOLDIT.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'MyriadPro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Myriad Pro Bold Condensed'), url('~assets/fonts/MYRIADPRO-BOLDCOND.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'MyriadPro';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Myriad Pro Bold'), url('~assets/fonts/MYRIADPRO-BOLD.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'MyriadPro';
+  font-style: italic;
+  font-weight: bold;
+  src: local('Myriad Pro Bold Italic'), url('~assets/fonts/MYRIADPRO-BOLDIT.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'MyriadPro';
+  font-style: italic;
+  font-weight: 900;
+  src: local('Myriad Pro Bold Condensed Italic'), url('~assets/fonts/MYRIADPRO-BOLDCONDIT.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('~assets/fonts/HomepageBaukasten-Book.woff2') format('woff2'),
+  url('~assets/fonts/HomepageBaukasten-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('~assets/fonts/Gotham-Ultra.woff2') format('woff2'),
+    url('~assets/fonts/Gotham-Ultra.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+  }
+
+
+

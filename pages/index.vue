@@ -1,81 +1,84 @@
 <template>
-  <div>
-    <main id="modal">
-      <section class="main">
-        <div class="main-cover">
+  <main>
+    <section class="main">
+      <div class="main-cover">
+        <div class="main-cover__title">
           <h1>
             {{ main.heading }}
             <span> {{ main.span }} </span>
           </h1>
-          <nuxt-link to="/contact" class="btn">{{ main.button }}</nuxt-link>
+          <p>
+            {{ main.paragraph }}
+          </p>
         </div>
-      </section>
-      <Track>{{ track }}</Track>
-      <section class="offers container">
-        <div class="offers-heading">
-          <h3>
-            <span> If you love your care </span>
-            we will make it shine!
-          </h3>
+        <nuxt-link to="/contact" class="btn">{{ main.button }}</nuxt-link>
+      </div>
+    </section>
+    <Track>{{ track }}</Track>
+    <section class="offers container">
+      <div class="offers-heading">
+        <h2>
+          <span> If you love your care </span>
+          we will make it shine!
+        </h2>
+      </div>
+      <div class="offers-cards">
+        <div
+          class="offers-cards__card"
+          v-for="offer in offerCards"
+          :key="offer.title"
+        >
+          <img
+            :src="require(`@/static/${offer.src}`)"
+            :alt="`${offer.title}`"
+          />
+          <h4>{{ offer.title }}</h4>
+          <p>{{ offer.description }}</p>
         </div>
-        <div class="offers-cards">
-          <div
-            class="offers-cards__card"
-            v-for="offer in offerCards"
-            :key="offer.title"
-          >
+      </div>
+    </section>
+    <section class="gallery">
+      <div class="gallery-container">
+        <div class="gallery-cards">
+          <div v-for="card in galleryCards" :key="card" class="card">
             <img
-              :src="require(`@/static/${offer.src}`)"
-              :alt="`${offer.title}`"
+              :src="require(`@/static/${card.src}`)"
+              :alt="`${card.title}`"
             />
-            <h4>{{ offer.title }}</h4>
-            <p>{{ offer.description }}</p>
+            <p>{{ card.title }}</p>
           </div>
         </div>
-      </section>
-      <section class="gallery">
-        <div class="gallery-container">
-          <div class="gallery-cards">
-            <div v-for="card in galleryCards" :key="card" class="card">
-              <img
-                :src="require(`@/static/${card.src}`)"
-                :alt="`${card.title}`"
-              />
-              <p>{{ card.title }}</p>
-            </div>
-          </div>
-          <button id="show-modal" @click="openGallery" class="btn btn-invert">
-            Show Gallery
-          </button>
-        </div>
-      </section>
+        <button id="show-modal" @click="openGallery" class="btn btn-invert">
+          Show Gallery
+        </button>
+      </div>
+    </section>
 
-      <transition name="modal">
-        <section class="modal" v-if="showGallery">
-          >
-          <div class="modal-mask">
-            <div class="modal-wrapper">
-              <div class="modal-container" v-click-outside="closeGallery">
-                <VueSlickCarousel
-                  v-bind="settings"
-                  ref="carousel"
-                  v-for="images in gallery"
-                  :key="images"
-                >
-                  <div v-for="image in images.images" :key="image">
-                    <img
-                      :src="`http://localhost:1337${image.url}`"
-                      alt="Flowers"
-                    />
-                  </div>
-                </VueSlickCarousel>
-              </div>
+    <transition name="modal">
+      <section class="modal" v-if="showGallery">
+        >
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="modal-container" v-click-outside="closeGallery">
+              <VueSlickCarousel
+                v-bind="settings"
+                ref="carousel"
+                v-for="images in gallery"
+                :key="images"
+              >
+                <div v-for="image in images.images" :key="image">
+                  <img
+                    :src="`http://localhost:1337${image.url}`"
+                    alt="Flowers"
+                  />
+                </div>
+              </VueSlickCarousel>
             </div>
           </div>
-        </section>
-      </transition>
-    </main>
-  </div>
+        </div>
+      </section>
+    </transition>
+  </main>
 </template>
 
 <script>
@@ -98,6 +101,7 @@ export default {
       main: {
         heading: "Proffesional",
         span: "Car Detailing Services",
+        paragraph: "Your car deserves it. Give them the best tretman.",
         button: "Book Now",
       },
       track: "We are open / Monday - Saturday / 8:00 AM - 20:00 PM",
@@ -105,24 +109,28 @@ export default {
       gallery: [],
       offerCards: [
         {
-          title: "Deep cleaning",
-          description: "Lorem ipsum sit amet, consectetur adipisicing...",
-          src: "offer.png",
+          title: "Vacuuming",
+          description:
+            "indoor vacuming and deep wet cleaning is the basis of a good detailing",
+          src: "vacuum.png",
+        },
+        {
+          title: "Cleaning",
+          description:
+            "detailing is more than a cleaning process to keep a vehicle it's best condition",
+          src: "clean.png",
         },
         {
           title: "Shining",
-          description: "Lorem ipsum sit amet, consectetur adipisicing...",
-          src: "offer.png",
-        },
-        {
-          title: "Refreshing",
-          description: "Lorem ipsum sit amet, consectetur adipisicing...",
-          src: "offer.png",
+          description:
+            "shine finish will make every single indoor and outdoor detail clean and shine",
+          src: "shine.png",
         },
         {
           title: "Polishing",
-          description: "Lorem ipsum sit amet, consectetur adipisicing...",
-          src: "offer.png",
+          description:
+            "exterior polishing will make color to expression and vehicle will looks newer",
+          src: "polish.png",
         },
       ],
       galleryCards: [
@@ -172,34 +180,37 @@ export default {
 @import "@/assets/sass/abstracts/_colors.scss";
 
 .main {
-  background: url("~@/assets/cover.jpg") no-repeat center center scroll;
+  background: url("~@/static/cover.png") no-repeat center center scroll;
   height: 66vh;
   &-cover {
-    padding: 20px 0;
-    width: 1200px;
+    padding: 1.25rem 0;
+    width: 75rem;
     margin: 0 auto;
 
+    &__title {
+      float: left;
+    }
+
     a {
-      margin-top: 50px;
+      margin-top: 1.875rem;
       float: left;
       clear: both;
     }
 
     h1 {
-      margin-top: 110px;
+      margin-top: 8.188rem;
       text-transform: uppercase;
-      color: white;
-      font-weight: 800;
-      font-size: 60px;
-      padding: 5px 5px 0;
-      border-radius: 10px;
-      background: rgba(0, 0, 0, 0.5);
-      float: left;
+    }
+
+    p {
+      font-size: 1.563rem;
+      padding-top: 1.25rem;
+      letter-spacing: 0.019rem;
     }
 
     span {
       display: block;
-      font-size: 35px;
+      font-size: 47px;
     }
   }
 }
@@ -238,15 +249,13 @@ export default {
 .offers {
   padding: 50px 0;
   &-heading {
-    h3 {
+    h2 {
       color: $primary-darker;
       text-transform: uppercase;
-      font-weight: 900;
       text-align: center;
       span {
         display: block;
         font-weight: 500;
-        font-size: 35px;
       }
     }
   }
@@ -258,7 +267,7 @@ export default {
     padding: 40px 0 20px 0;
 
     &__card {
-      padding: 40px 0;
+      padding: 40px 57px;
       &:hover {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         transition: all 0.5s ease;
@@ -266,21 +275,19 @@ export default {
       }
     }
 
+    img {
+      width: 153px;
+    }
+
     h4 {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      color: $primary;
       padding-top: 25px;
     }
     p {
-      color: $primary-darker;
+      color: #154455;
       padding-top: 10px;
-      font-weight: 500;
-      width: 70%;
-      margin: 0 auto;
-      letter-spacing: 1.2px;
-      line-height: 20px;
+      font-size: 1.250rem;
+      letter-spacing: 0;
+      font-weight: normal;
     }
   }
 }

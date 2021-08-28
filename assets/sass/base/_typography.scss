@@ -1,6 +1,9 @@
 body {
-    font-family: sans-serif;
-    font-size: 1rem;
+  font-family: 'MyriadPro';
+}
+
+html {
+    font-size: 16px;
 }
 
 h1,
@@ -9,67 +12,74 @@ h3,
 h4,
 h5,
 h6 {
-    span {
-        color: inherit;
-    }
+  span {
+    color: inherit;
+  }
 }
+
 
 h1,
 h2 {
-    color: $primary;
-    font-weight: 500;
-    font-size: 2.5714rem;
-    line-height: 2.5714rem; 
-    margin: 0;
-    @include breakpoint($md) {
-        font-size: 3.4285rem;
-        line-height: 3.4285rem;
-    }
-    @include breakpoint($xs) {
-       font-size: 1.9rem;
-       line-height: 1.9rem;
-    }
+  font-family: 'Gotham';
+  color: $secondary;
+  letter-spacing: 2.805px;
+  margin: 0;
+  // @include breakpoint($md) {
+  //     font-size: 3.4285rem;
+  //     line-height: 3.4285rem;
+  // }
+  // @include breakpoint($xs) {
+  //    font-size: 1.9rem;
+  //    line-height: 1.9rem;
+  // }
+}
+
+h1 {
+    font-size: 5.063rem;
+    font-weight: 900;
+    line-height: 4.375rem;
+}
+
+h2 {
+    font-size: 2.625rem;
+    font-weight: 800;
+    line-height: 3.348rem;
 }
 
 h3,
 h4 {
-    color: $secondary;
-    font-style: normal;
-    margin: 0;
+  font-size: 1.875rem;
+  color: $primary;
+  font-style: normal;
+  font-weight: bold;
+  margin: 0;
 }
 
 h5,
 h6 {
-    color: $tertiary;
-    font-style: normal;
-    margin: 0;
-}
-
-h3 {
-    font-weight: 500;
-    font-size: 1.938rem;
-}
-
-h4 {
-    font-weight: 500;
-    font-size: 1.438rem;
+  color: $tertiary;
+  font-style: normal;
+  margin: 0;
 }
 
 h5 {
-    font-weight: 500;
-    font-size: 1.313rem;
+  font-weight: 500;
+  font-size: 1.313rem;
 }
 
 h6 {
-    font-weight: 500;
-    font-size: 1.125rem;
+  font-weight: 500;
+  font-size: 1.125rem;
 }
 
 li {
-    font-size: 1.125rem;
+  font-size: 1.125rem;
 }
 
 span {
-   color: $tertiary;
+  color: $tertiary;
 }
 
+p {
+    font-size: 1.125rem;
+}

@@ -1,19 +1,19 @@
 .btn {
   display: block;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
   background-color: white;
-  padding: 12px 50px;
-  font-size: 16px;
-  border-radius: 20px;
+  padding: 15px 45px;
+  font-size: 1.125rem;
+  border-radius: 50px;
   font-weight: 700;
+  letter-spacing: 0.163rem;
   border: 0px;
-  color: $primary;
+  color: $primary-darker;
   cursor: pointer;
   transition: all 0.5s ease;
 
   &:hover {
-    background-color: darken($primary, 5%);
+    background-color: darken($primary-darker, 5%);
     color: $secondary;
   }
 
