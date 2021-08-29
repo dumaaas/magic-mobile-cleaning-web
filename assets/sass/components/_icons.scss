@@ -40,12 +40,20 @@
     }
   }
 
-  &.icon-darker {
-    border-color: $primary-darker;
+  &.icon-lighter {
+    border-color: $secondary;
+
+    path {
+      fill: $secondary;
+      transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
 
     &:hover {
-      color: $primary-darker;
-      border: 2px solid $primary-darker;
+      path {
+        fill: $secondary;
+      }
+      border: 2px solid $primary;
+      transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
   }
 }

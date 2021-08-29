@@ -25,7 +25,7 @@ a.nuxt-link-exact-active {
 }
 
 .container {
-  width: 1400px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
