@@ -1,9 +1,13 @@
 .icon {
   display: inline-block;
   border-radius: 50%;
-  border: 1px solid $primary-darker;
-  padding: 0px 4px;
+  border: 2px solid $primary-darker;
   margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 27px;
+  height: 27px;
 
   path {
     fill: $primary-darker;
@@ -13,7 +17,7 @@
 
   &:hover {
 
-    border: 1px solid darken($color: $primary, $amount: 10%);
+    border: 2px solid darken($color: $primary, $amount: 10%);
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
     path {
@@ -23,20 +27,26 @@
     }
   }
 
-  &.instagram,
+  &.instagram {
+    svg {
+      width: 15px;
+      height: 17px;
+    }
+  }
+
   &.youtube {
     svg {
-      width: 12px;
-      margin-top: 1px;
+      width: 16px;
+      height: 15px;
     }
   }
 
   &.facebook {
-    padding: 0px 6px;
+
 
     svg {
-      width: 8px;
-      margin-top: 1px;
+      width: 9px;
+      height: 15px;
     }
   }
 
@@ -52,8 +62,15 @@
       path {
         fill: $secondary;
       }
+
       border: 2px solid $primary;
       transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
   }
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }

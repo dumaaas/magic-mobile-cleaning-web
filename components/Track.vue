@@ -14,10 +14,10 @@
     div {
         background-color: #19A3A6;
         color: white;
-        font-size: 1.313rem;
+        font-size: 1.393rem;
         text-transform: uppercase;
         text-align: center;
-        padding: 1.875rem 0;
+        padding: 2.344rem 0;
         letter-spacing: 0.165rem;
     }
 </style>

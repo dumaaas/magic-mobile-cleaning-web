@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="icons">
     <a
       v-for="icon in socialIcons"
       :key="icon.name"

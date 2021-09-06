@@ -6,12 +6,12 @@
     <div class="contact">
       <div class="contact-bg">
         <div class="container">
-          <ContactForm />
+          <ContactForm mode="darker" />
         </div>
       </div>
       <div class="contact-info">
         <div class="container contact-info__content">
-          <ContactInfo />
+          <ContactInfo mode="darker" />
           <div class="map">
             <div class="mapouter">
               <div class="gmap_canvas">

@@ -21,11 +21,12 @@ export default {
 a.nuxt-link-exact-active {
   border-bottom: 4px solid #19a3a6;
   color: #19a3a6;
-  padding-bottom: 15px;
+  padding-bottom: 16px;
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1402px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 

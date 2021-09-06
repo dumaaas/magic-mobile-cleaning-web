@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-form">
+  <div class="contact-form" :class="mode">
     <h3>
       Want to Book?
       <span> Fill this form and we will contact you </span>
@@ -56,6 +56,9 @@
 
 <script>
 export default {
+  props: {
+    mode: String
+  },
   data() {
     return {
       formData: {
@@ -102,6 +105,13 @@ export default {
 
 .contact-form {
   width: 50%;
+
+  &.darker {
+    h3 {
+      color: $primary-darker;
+    }
+  }
+
   h3 {
     text-transform: uppercase;
     color: $secondary;

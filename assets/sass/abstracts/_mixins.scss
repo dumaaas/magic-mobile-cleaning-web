@@ -35,6 +35,11 @@ $md-only: (
     max: map-get($lg, min) - 1
 );
 
+$small-only: (
+    min: map-get($sm, min),
+    max: map-get($lg, min) - 1
+);
+
 @mixin breakpoint($map) {
     $query: '';
 

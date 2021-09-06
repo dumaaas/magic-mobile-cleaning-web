@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="main">
-      <div class="main-cover">
+      <div class="main-cover container">
         <div class="main-cover__title">
           <h1>
             {{ main.heading }}
@@ -51,7 +51,9 @@
               detailing is taking care of everything inside the car.
             </p>
             <div>
-              <button class="btn ml-auto btn-primary">SEE MORE</button>
+              <nuxt-link class="btn ml-auto btn-primary" to="/services"
+                >SEE MORE</nuxt-link
+              >
             </div>
           </div>
         </div>
@@ -68,7 +70,9 @@
               over a decade!
             </p>
             <div>
-              <button class="btn btn-secondary">SEE MORE</button>
+              <nuxt-link class="btn btn-secondary" to="/services"
+                >SEE MORE</nuxt-link
+              >
             </div>
           </div>
         </div>
@@ -88,9 +92,7 @@
           <div class="gallery-bottom__title">
             <p>Before and After</p>
           </div>
-          <div class="gallery-bottom__line">
-            <hr />
-          </div>
+          <div class="gallery-bottom__line"></div>
           <div class="gallery-bottom__btn">
             <button
               id="show-modal"
@@ -228,6 +230,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_colors.scss";
+@import "@/assets/sass/abstracts/_mixins.scss";
 
 .ml-auto {
   margin-left: auto;
@@ -235,25 +238,19 @@ export default {
 
 .main {
   background: url("~@/static/cover.png") no-repeat center center scroll;
-  height: 66vh;
   &-cover {
-    padding: 1.25rem 0;
-    width: 75rem;
-    margin: 0 auto;
-
+    padding: 142px 20px 172px 20px;
     &__title {
-      float: left;
     }
 
     a {
-      margin-top: 1.875rem;
-      float: left;
-      clear: both;
+      display: inline-block;
+      margin-top: 2.875rem;
     }
 
     h1 {
       text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-      margin-top: 8.188rem;
+
       text-transform: uppercase;
     }
 
@@ -302,7 +299,7 @@ export default {
 }
 
 .offers {
-  padding: 50px 0;
+  padding-top: 64px;
   &-heading {
     h2 {
       color: $primary-darker;
@@ -316,13 +313,20 @@ export default {
   }
   &-cards {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: space-between;
     text-align: center;
-    padding: 40px 0 20px 0;
+    padding: 70px 0;
 
     &__card {
+      flex: 1 1 22%;
       padding: 40px 57px;
+
+      @include breakpoint($sm-only) {
+        flex: 1 1 50%;
+      }
+
       &:hover {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         transition: all 0.5s ease;
@@ -335,12 +339,12 @@ export default {
     }
 
     h4 {
-      padding-top: 25px;
+      padding-top: 43px;
     }
     p {
       color: #154455;
-      padding-top: 10px;
-      font-size: 1.25rem;
+      padding-top: 22px;
+      font-size: 1.125rem;
       letter-spacing: 0;
       font-weight: normal;
     }
@@ -350,7 +354,7 @@ export default {
 .services {
   background-color: $primary-darker;
   &-cards {
-    padding: 50px 0;
+    padding: 50px 20px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -364,7 +368,14 @@ export default {
         background-color: $secondary;
         display: flex;
         flex-direction: column;
-        gap: 73px;
+        justify-content: space-between;
+
+        @include breakpoint($small-only) {
+          padding: 66px 37px 50px 37px;
+        }
+        @include breakpoint($md-only) {
+          padding: 66px 60px 50px 60px;
+        }
         padding: 66px 73px 50px 85px;
         order: 2;
         width: 38%;
@@ -375,6 +386,12 @@ export default {
           text-align: left;
           order: 1;
           padding: 66px 85px 50px 73px;
+          @include breakpoint($small-only) {
+            padding: 66px 37px 50px 37px;
+          }
+          @include breakpoint($md-only) {
+            padding: 66px 60px 50px 60px;
+          }
           h4 {
             color: $secondary;
           }
@@ -389,6 +406,15 @@ export default {
         p {
           color: $primary-darker;
           font-size: 1.375rem;
+          @include breakpoint($small-only) {
+            font-size: 1.188rem;
+          }
+          @include breakpoint($md-only) {
+            font-size: 1.25rem;
+          }
+        }
+        a {
+          display: inline-block;
         }
       }
       &-left {
@@ -409,9 +435,9 @@ export default {
 
 .gallery {
   background-color: $primary-lighter;
-  padding: 50px 0;
 
   &-container {
+    padding: 78px 20px 89px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -422,9 +448,13 @@ export default {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    gap: 30px;
     .card {
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       border: 6px solid $secondary;
+      img {
+        width: 100%;
+      }
     }
   }
 
@@ -433,18 +463,21 @@ export default {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding-top: 40px;
+    gap: 40px;
+    @include breakpoint($sm-only) {
+      gap: 25px;
+    }
+    padding-top: 51px;
     p {
       font-size: 2rem;
       color: $primary-darker;
       text-transform: uppercase;
       font-weight: bold;
     }
+
     &__line {
-      width: 55%;
-    }
-    hr {
-      border: 1px solid $primary;
+      flex-grow: 1;
+      border-bottom: 1px solid $primary;
     }
   }
 }

@@ -76,6 +76,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_colors.scss";
+@import "@/assets/sass/abstracts/_mixins.scss";
 
 .header {
   font-weight: 600;
@@ -86,7 +87,6 @@ export default {
   }
   li {
     display: inline-block;
-
   }
 
   &-bg {
@@ -98,12 +98,22 @@ export default {
     align-items: flex-start;
     padding: 20px 80px;
 
+    @include breakpoint($md-only) {
+      padding: 20px;
+    }
+
+    &__logo {
+      vertical-align: middle;
+      padding: 13px 0;
+    }
+
     &__social {
-      width: 18%;
+      width: 282px;
     }
 
     &__contact {
-      width: 18%;
+      width: 282px;
+
       text-align: right;
       p {
         color: $primary-darker;
@@ -117,14 +127,6 @@ export default {
         }
       }
     }
-
-    &__logo {
-      vertical-align: middle;
-
-      svg {
-        margin: 0 auto;
-      }
-    }
   }
   &-main {
     display: flex;
@@ -134,7 +136,7 @@ export default {
     &__links {
       display: flex;
       align-items: flex-end;
-      padding: 20px 0;
+      padding: 19px 0 21px 0;
       a {
         font-weight: 600;
         font-size: 1.125rem;
@@ -144,7 +146,7 @@ export default {
       a:hover {
         border-bottom: 4px solid $primary;
         color: $primary;
-        padding-bottom: 15px;
+        padding-bottom: 16px;
       }
     }
   }
