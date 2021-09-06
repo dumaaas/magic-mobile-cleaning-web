@@ -52,7 +52,7 @@ export default {
 
   strapi: {
     entities: ['mains', 'header-links', 'contacts', 'galleries'],
-    url: 'http://localhost:1337'
+    url: 'https://cleaning-cms.herokuapp.com/'
   },
 
   fontawesome: {

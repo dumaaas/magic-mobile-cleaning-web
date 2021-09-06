@@ -120,7 +120,7 @@
               >
                 <div v-for="image in images.images" :key="image">
                   <img
-                    :src="`http://localhost:1337${image.url}`"
+                    :src="`https://cleaning-cms.herokuapp.com${image.url}`"
                     alt="Flowers"
                   />
                 </div>
