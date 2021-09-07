@@ -105,6 +105,14 @@
         </div>
       </div>
     </section>
+    <section class="contact">
+      <div class="contact-bg">
+        <div class="contact-main container">
+          <ContactForm />
+          <ContactInfo />
+        </div>
+      </div>
+    </section>
 
     <transition name="modal">
       <section class="modal" v-if="showGallery">
@@ -135,6 +143,8 @@
 
 <script>
 import Track from "@/components/Track.vue";
+import ContactForm from "@/components/ContactForm.vue";
+import ContactInfo from "@/components/ContactInfo.vue";
 import VueSlickCarousel from "vue-slick-carousel";
 import vClickOutside from "v-click-outside";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
@@ -147,6 +157,8 @@ export default {
   components: {
     Track,
     VueSlickCarousel,
+    ContactForm,
+    ContactInfo,
   },
   data() {
     return {
@@ -478,6 +490,23 @@ export default {
     &__line {
       flex-grow: 1;
       border-bottom: 1px solid $primary;
+    }
+  }
+}
+
+.contact {
+  &-bg {
+    background: url("~@/static/footer.png") no-repeat center center scroll;
+    background-size: cover;
+  }
+  &-main {
+    display: flex;
+    justify-content: space-between;
+    padding: 144px 20px;
+
+    @include breakpoint($sm-only) {
+      flex-direction: column;
+      padding: 80px 20px;
     }
   }
 }

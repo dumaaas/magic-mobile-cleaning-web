@@ -98,7 +98,7 @@ export default {
     align-items: flex-start;
     padding: 20px 80px;
 
-    @include breakpoint($md-only) {
+    @include breakpoint($small-only) {
       padding: 20px;
     }
 
@@ -118,6 +118,10 @@ export default {
       p {
         color: $primary-darker;
         font-weight: bold;
+
+        @include breakpoint($sm-only) {
+          font-size: 1rem;
+        }
       }
 
       svg {

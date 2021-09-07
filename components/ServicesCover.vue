@@ -20,6 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 .services-cover {
+  background-size: cover;
   h2 {
     padding: 370px 0 100px 0;
     text-transform: uppercase;

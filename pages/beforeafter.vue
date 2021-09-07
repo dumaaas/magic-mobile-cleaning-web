@@ -72,18 +72,19 @@ export default {
 
 .flex {
   display: flex;
-  gap: 10px;
+  gap: 18px;
 }
 .flex-col {
   display: flex;
-  gap: 10px;
+  gap: 14px;
   flex-direction: column;
 }
 .gallery {
   background-color: $tertiary-lighter;
-  padding: 30px 0 50px 0;
+  padding: 51px 0 96px 0;
   img {
     object-fit: cover;
+    width: 100%;
   }
   p {
     color: $secondary-darker;
@@ -91,7 +92,7 @@ export default {
   }
 
   &-pictures {
-    padding-top: 40px;
+    padding-top: 70px;
   }
 }
 </style>

@@ -55,6 +55,7 @@
 </template>
 
 <script>
+
 export default {
   props: {
     mode: String
@@ -102,9 +103,15 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_colors.scss";
+@import "@/assets/sass/abstracts/_mixins.scss";
 
 .contact-form {
   width: 50%;
+
+  @include breakpoint($sm-only) {
+    width: 100%;
+    
+  }
 
   &.darker {
     h3 {
@@ -124,9 +131,9 @@ export default {
     display: block;
   }
   form {
-    padding-top: 30px;
+    padding-top: 60px;
     button {
-      margin-top: 30px;
+      margin-top: 42px;
     }
   }
   .inputs-top {
@@ -136,13 +143,13 @@ export default {
   .inputs {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 34px;
     width: 100%;
   }
   .inputs-flex {
     display: flex;
     width: 100%;
-    gap: 30px;
+    gap: 34px;
     input {
       width: 50%;
     }

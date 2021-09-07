@@ -59,17 +59,18 @@ export default {
 
   &-info {
     background-color: $tertiary-lighter;
-    padding: 70px 0;
+    padding: 140px 0;
 
     &__content {
       display: flex;
+      gap: 20px;
       justify-content: space-between;
     }
   }
 }
 
 .map {
-  width: 60%;
+  width: 50%;
   .mapouter {
     position: relative;
     text-align: right;
