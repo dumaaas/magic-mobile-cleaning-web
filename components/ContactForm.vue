@@ -4,16 +4,12 @@
       Want to Book?
       <span> Fill this form and we will contact you </span>
     </h3>
-    <div v-if="error">
-      {{ error }}
-    </div>
 
     <form
       id="form"
       autocomplete="off"
       spellcheck="false"
       v-on:submit="handleSubmit"
-      v-else
     >
       <div class="inputs">
         <div class="inputs-flex">
@@ -24,11 +20,10 @@
             name="name"
           />
           <input
-            type="email"
+            type="text"
             v-model="formData.email"
             placeholder="email"
             name="email"
-            required
           />
         </div>
         <div class="inputs-flex">
@@ -46,7 +41,10 @@
           />
         </div>
       </div>
-
+      <div class="errors">
+        <span v-if="formError">{{ formError }}</span>
+        <span v-if="error"> Email must be valid! </span>
+      </div>
       <div>
         <button type="submit" class="btn btn-invert">Send</button>
       </div>
@@ -55,10 +53,9 @@
 </template>
 
 <script>
-
 export default {
   props: {
-    mode: String
+    mode: String,
   },
   data() {
     return {
@@ -85,14 +82,21 @@ export default {
           iconName: "youtube",
         },
       ],
+      formError: "",
       error: null,
     };
   },
   methods: {
     handleSubmit: async function (e) {
       e.preventDefault();
+      if (!this.formData.name || !this.formData.email || !this.formData.phone) {
+        this.formError = "Name, email and phone fields are reqired!";
+        return;
+      }
+      this.formError = "";
       try {
         await this.$strapi.$contacts.create(this.formData);
+        this.error = "";
       } catch (error) {
         this.error = error;
       }
@@ -110,7 +114,6 @@ export default {
 
   @include breakpoint($sm-only) {
     width: 100%;
-    
   }
 
   &.darker {
@@ -152,6 +155,13 @@ export default {
     gap: 34px;
     input {
       width: 50%;
+    }
+  }
+  .errors {
+    padding-top: 20px;
+    span {
+      color: #ed4337;
+      font-size: 16px;
     }
   }
 }

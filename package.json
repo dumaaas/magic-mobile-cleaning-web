@@ -20,6 +20,7 @@
     "nuxt": "^2.15.7",
     "sass-loader": "^10",
     "v-click-outside": "^3.1.2",
+    "vue-fixed-header": "^3.2.15",
     "vue-slick-carousel": "^1.0.6",
     "vuelidate": "^0.7.6"
   },

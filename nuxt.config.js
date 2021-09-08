@@ -68,5 +68,7 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {},
+
+  loading: { color: '#3B8070' },
 }
