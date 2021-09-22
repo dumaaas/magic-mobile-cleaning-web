@@ -377,6 +377,7 @@ export default {
 
       @include breakpoint($xs) {
         flex: 1 1 49%;
+        padding: 40px 4px;
       }
 
       &:hover {
