@@ -165,7 +165,7 @@ export default {
       main: {
         heading: "Proffesional",
         span: "Car Detailing Services",
-        paragraph: "Your car deserves it. Give them the best tretman.",
+        paragraph: "Your car deserves it.",
         button: "Book Now",
       },
       track: "We are open / Monday - Saturday / 8:00 AM - 20:00 PM",
@@ -250,31 +250,54 @@ export default {
 
 .main {
   background: url("~@/static/cover.png") no-repeat center center scroll;
+  background-size: cover;
+  @include breakpoint($xs) {
+    background: url("~@/static/cover-mobile.png") no-repeat center center scroll;
+    background-size: cover;
+  }
   &-cover {
     padding: 142px 20px 172px 20px;
+    @include breakpoint($xs) {
+      padding: 44px 20px 39px 20px;
+    }
+
     &__title {
     }
 
     a {
       display: inline-block;
       margin-top: 2.875rem;
+      @include breakpoint($xs) {
+        margin-top: 33px;
+      }
     }
 
     h1 {
       text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-
       text-transform: uppercase;
+      @include breakpoint($xs) {
+        font-size: 2.2rem;
+        line-height: 35px;
+      }
     }
 
     p {
       font-size: 1.563rem;
       padding-top: 1.25rem;
       letter-spacing: 0.019rem;
+      @include breakpoint($xs) {
+        font-size: 1.1rem;
+        padding-top: 0.25rem;
+      }
     }
 
     span {
       display: block;
       font-size: 2.938rem;
+      @include breakpoint($xs) {
+        font-size: 1.2rem;
+        line-height: 25px;
+      }
     }
   }
 }
@@ -312,11 +335,20 @@ export default {
 
 .offers {
   padding-top: 64px;
+
+  @include breakpoint($xs) {
+    padding-top: 55px;
+  }
   &-heading {
     h2 {
       color: $primary-darker;
       text-transform: uppercase;
       text-align: center;
+
+      @include breakpoint($xs) {
+        font-size: 1.25rem;
+        line-height: 25px;
+      }
       span {
         display: block;
         font-weight: 500;
@@ -331,12 +363,20 @@ export default {
     text-align: center;
     padding: 70px 0;
 
+    @include breakpoint($xs) {
+      padding: 35px 0;
+    }
+
     &__card {
       flex: 1 1 22%;
       padding: 40px 57px;
 
       @include breakpoint($sm-only) {
         flex: 1 1 50%;
+      }
+
+      @include breakpoint($xs) {
+        flex: 1 1 49%;
       }
 
       &:hover {
@@ -348,6 +388,9 @@ export default {
 
     img {
       width: 153px;
+      @include breakpoint($xs) {
+        width: 95px;
+      }
     }
 
     h4 {
