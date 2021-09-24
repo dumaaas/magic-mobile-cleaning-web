@@ -1,12 +1,22 @@
 <template>
-  <div
-    class="services-cover"
-    :style="{
-      backgroundImage: `url(` + require(`~/static/services-${service}.png`)}"
-  >
-    <div class="container">
-      <h2>{{ service }} detailing</h2>
+  <div>
+    <div
+      class="services-cover desktop"
+      :style="{
+        backgroundImage: `url(` + require(`~/static/services-${service}.png`),
+      }"
+    >
+      <div class="container">
+        <h2>{{ service }} detailing</h2>
+      </div>
     </div>
+    <div
+      class="services-cover mobile"
+      :style="{
+        backgroundImage:
+          `url(` + require(`~/static/services-${service}-mobile.png`),
+      }"
+    ></div>
   </div>
 </template>
 
@@ -19,8 +29,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/sass/abstracts/_colors.scss";
+@import "@/assets/sass/abstracts/_mixins.scss";
+
+.mobile {
+  display: none;
+  @include breakpoint($xs) {
+    display: block;
+  }
+}
+
+.desktop {
+  display: block;
+  @include breakpoint($xs) {
+    display: none;
+  }
+}
 .services-cover {
   background-size: cover;
+
+  &.mobile {
+    height: 200px;
+  }
+
   h2 {
     padding: 370px 0 100px 0;
     text-transform: uppercase;
