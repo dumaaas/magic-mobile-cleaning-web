@@ -24,7 +24,7 @@
         letter-spacing: 0.165rem;
         @include breakpoint($xs) {
             font-size: 0.85rem;
-            padding: 0.813rem 0;
+            padding: 0.688rem 0;
         }
     }
 </style>

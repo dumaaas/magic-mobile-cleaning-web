@@ -7,14 +7,18 @@
             {{ main.heading }}
             <span> {{ main.span }} </span>
           </h1>
-          <p>
+          <p class="desktop">
             {{ main.paragraph }}
+          </p>
+          <p class="mobile">
+            {{ main.mobileParagraph }}
           </p>
         </div>
         <nuxt-link to="/contact" class="btn">{{ main.button }}</nuxt-link>
       </div>
     </section>
-    <Track>{{ track }}</Track>
+    <Track class="desktop">{{ track }}</Track>
+    <Track class="mobile">{{ trackMobile }}</Track>
     <section class="offers container">
       <div class="offers-heading">
         <h2>
@@ -33,7 +37,8 @@
             :alt="`${offer.title}`"
           />
           <h4>{{ offer.title }}</h4>
-          <p>{{ offer.description }}</p>
+          <p class="desktop">{{ offer.description }}</p>
+          <p class="mobile">{{ offer.descriptionMobile }}</p>
         </div>
       </div>
     </section>
@@ -50,7 +55,7 @@
               This is a complex operation that requires multiple steps. Interior
               detailing is taking care of everything inside the car.
             </p>
-            <div>
+            <div class="desktop">
               <nuxt-link class="btn ml-auto btn-primary" to="/services"
                 >SEE MORE</nuxt-link
               >
@@ -69,7 +74,7 @@
               detailed car can look and smell like a new car, even if it’s aged
               over a decade!
             </p>
-            <div>
+            <div class="desktop">
               <nuxt-link class="btn btn-secondary" to="/services"
                 >SEE MORE</nuxt-link
               >
@@ -78,7 +83,7 @@
         </div>
       </div>
     </section>
-    <section class="gallery">
+    <section class="gallery desktop">
       <div class="gallery-container container">
         <div class="gallery-cards">
           <div class="card">
@@ -165,35 +170,45 @@ export default {
       main: {
         heading: "Proffesional",
         span: "Car Detailing Services",
-        paragraph: "Your car deserves it.",
+        paragraph: "Your car deserves it. Give them the best treatment",
+        mobileParagraph: "Your car deserves it.",
         button: "Book Now",
       },
       track: "We are open / Monday - Saturday / 8:00 AM - 20:00 PM",
+      trackMobile: "Monday - Saturday / 8:00 AM - 20:00 PM",
       showGallery: false,
       gallery: [],
       offerCards: [
         {
           title: "Vacuuming",
           description:
-            "indoor vacuming and deep wet cleaning is the basis of a good detailing",
+            "indoor vacuming and deep wet cleaning is the basic of a good detailing",
+          descriptionMobile:
+            "indoor vacuming and deep wet cleaning is the basic of a good detailing",
           src: "vacuum.png",
         },
         {
           title: "Cleaning",
           description:
             "detailing is more than a cleaning process to keep a vehicle it's best condition",
+          descriptionMobile:
+            "through cleaning process the vehicle will reach the pinnacle of purity",
           src: "clean.png",
         },
         {
           title: "Shining",
           description:
             "shine finish will make every single indoor and outdoor detail clean and shine",
+          descriptionMobile:
+            "shining finish will make every single indoor and outdoor detail gloss",
           src: "shine.png",
         },
         {
           title: "Polishing",
           description:
             "exterior polishing will make color to expression and vehicle will looks newer",
+          descriptionMobile:
+            "exterior polishing makes color to expression and vehicle to looks newer",
           src: "polish.png",
         },
       ],
@@ -248,6 +263,20 @@ export default {
   margin-left: auto;
 }
 
+.mobile {
+  display: none;
+  @include breakpoint($xs) {
+    display: block;
+  }
+}
+
+.desktop {
+  display: block;
+  @include breakpoint($xs) {
+    display: none;
+  }
+}
+
 .main {
   background: url("~@/static/cover.png") no-repeat center center scroll;
   background-size: cover;
@@ -258,17 +287,14 @@ export default {
   &-cover {
     padding: 142px 20px 172px 20px;
     @include breakpoint($xs) {
-      padding: 44px 20px 39px 20px;
-    }
-
-    &__title {
+      padding: 37px 20px 39px 20px;
     }
 
     a {
       display: inline-block;
       margin-top: 2.875rem;
       @include breakpoint($xs) {
-        margin-top: 33px;
+        margin-top: 1.813rem;
       }
     }
 
@@ -277,7 +303,7 @@ export default {
       text-transform: uppercase;
       @include breakpoint($xs) {
         font-size: 2.2rem;
-        line-height: 35px;
+        line-height: 38px;
       }
     }
 
@@ -287,7 +313,7 @@ export default {
       letter-spacing: 0.019rem;
       @include breakpoint($xs) {
         font-size: 1.1rem;
-        padding-top: 0.25rem;
+        padding-top: 0.7rem;
       }
     }
 
@@ -364,7 +390,7 @@ export default {
     padding: 70px 0;
 
     @include breakpoint($xs) {
-      padding: 35px 0;
+      padding: 29px 0;
     }
 
     &__card {
@@ -377,7 +403,7 @@ export default {
 
       @include breakpoint($xs) {
         flex: 1 1 49%;
-        padding: 40px 4px;
+        padding: 28px 0;
       }
 
       &:hover {
@@ -396,13 +422,25 @@ export default {
 
     h4 {
       padding-top: 43px;
+      @include breakpoint($xs) {
+        padding-top: 21px;
+        font-size: 1.313rem;
+      }
     }
+
     p {
       color: #154455;
       padding-top: 22px;
       font-size: 1.125rem;
       letter-spacing: 0;
       font-weight: normal;
+      @include breakpoint($xs) {
+        padding-top: 11px;
+        max-width: 180px;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 1.063rem;
+      }
     }
   }
 }
@@ -414,27 +452,47 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    @include breakpoint($xs) {
+      padding: 60px 20px;
+      gap: 60px;
+    }
     &__card {
       display: flex;
       justify-content: flex-start;
       height: 473px;
       width: 100%;
+
+      @include breakpoint($xs) {
+        flex-direction: column;
+        height: auto;
+        border: 1px solid #829da6;
+        border-radius: 10px;
+      }
       &-right {
         text-align: right;
         background-color: $secondary;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        padding: 66px 73px 50px 85px;
+        order: 2;
+        width: 38%;
 
+        @include breakpoint($xs) {
+          padding: 22px 33px;
+        }
         @include breakpoint($small-only) {
           padding: 66px 37px 50px 37px;
         }
         @include breakpoint($md-only) {
           padding: 66px 60px 50px 60px;
         }
-        padding: 66px 73px 50px 85px;
-        order: 2;
-        width: 38%;
+
+        @include breakpoint($xs) {
+          width: 100%;
+          background-color: transparent;
+          text-align: left;
+        }
         &.revert {
           background-color: transparent;
           border: 1px solid $secondary;
@@ -442,6 +500,11 @@ export default {
           text-align: left;
           order: 1;
           padding: 66px 85px 50px 73px;
+          @include breakpoint($xs) {
+            order: 2;
+            border: 0;
+            padding: 22px 33px;
+          }
           @include breakpoint($small-only) {
             padding: 66px 37px 50px 37px;
           }
@@ -458,10 +521,19 @@ export default {
         h4 {
           color: $primary-darker;
           text-transform: uppercase;
+          @include breakpoint($xs) {
+            color: $secondary;
+            font-size: 1.313rem;
+          }
         }
         p {
           color: $primary-darker;
           font-size: 1.375rem;
+          @include breakpoint($xs) {
+            color: $secondary;
+            font-size: 1rem;
+            padding-top: 11px;
+          }
           @include breakpoint($small-only) {
             font-size: 1.188rem;
           }
@@ -475,10 +547,18 @@ export default {
       }
       &-left {
         width: 62%;
+        @include breakpoint($xs) {
+          width: 100%;
+          height: 196px;
+        }
         img {
           height: 100%;
           width: 100%;
           object-fit: cover;
+          @include breakpoint($xs) {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+          }
         }
         order: 1;
         &.revert {
@@ -547,6 +627,12 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 144px 20px;
+
+    @include breakpoint($xs) {
+      flex-direction: column;
+      padding: 71px 20px;
+      width: 100%;
+    }
 
     @include breakpoint($sm-only) {
       flex-direction: column;

@@ -30,7 +30,5 @@ a.nuxt-link-exact-active {
   padding: 0 20px;
   margin: 0 auto;
 }
-
-
 </style>
 

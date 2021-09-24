@@ -43,7 +43,7 @@ export default {
         {
           iconName: "map-marker-alt",
           name: "Adress",
-          content: "Yzhgast Streat 81A, Chicago Illanois",
+          content: "6071 N Milwaukee ave Chicago, IL",
         },
         {
           iconName: "phone-alt",
@@ -69,14 +69,21 @@ export default {
   display: flex;
   justify-content: flex-end;
 
+  @include breakpoint($xs) {
+    margin-top: 67px;
+    justify-content: flex-start;
+  }
+
   @include breakpoint($sm-only) {
     margin-top: 80px;
     justify-content: flex-start;
   }
+
   &.darker {
     h4 {
       color: $primary-darker;
     }
+
     @include breakpoint($sm-only) {
       margin-top: 0px;
     }
@@ -105,6 +112,10 @@ export default {
     padding-bottom: 9px;
     letter-spacing: 1.2px;
     color: $secondary;
+
+    @include breakpoint($xs) {
+      font-size: 1.313rem;
+    }
   }
 
   &-info {
@@ -114,12 +125,24 @@ export default {
       align-items: center;
       gap: 9px;
 
+      @include breakpoint($xs) {
+        padding-top: 19px;
+        gap: 8px;
+      }
+
       &-icon {
         width: 26px;
+        @include breakpoint($xs) {
+          width: 17px;
+        }
       }
 
       &-data {
         display: inline-block;
+
+        @include breakpoint($xs) {
+          font-size: 0.97rem;
+        }
 
         a {
           color: #a1a1a1;
@@ -141,6 +164,10 @@ export default {
         svg {
           width: 18px;
           height: 23px;
+          @include breakpoint($xs) {
+            width: 13px;
+            height: 16px;
+          }
         }
 
         .item-data {
@@ -152,10 +179,19 @@ export default {
         svg {
           width: 22px;
           height: 21px;
+
+          @include breakpoint($xs) {
+            width: 17px;
+            height: 14px;
+          }
         }
 
         .item-data {
           width: 50%;
+
+          @include breakpoint($xs) {
+            width: 100%;
+          }
         }
       }
 
@@ -163,6 +199,11 @@ export default {
         svg {
           width: 23px;
           height: 22px;
+
+          @include breakpoint($xs) {
+            width: 17px;
+            height: 14px;
+          }
         }
       }
     }

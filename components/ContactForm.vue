@@ -116,6 +116,10 @@ export default {
     width: 100%;
   }
 
+  @include breakpoint($xs) {
+    width: 100%;
+  }
+
   &.darker {
     h3 {
       color: $primary-darker;
@@ -135,8 +139,14 @@ export default {
   }
   form {
     padding-top: 60px;
+    @include breakpoint($xs) {
+      padding-top: 41px;
+    }
     button {
       margin-top: 42px;
+      @include breakpoint($xs) {
+        margin-top: 7px;
+      }
     }
   }
   .inputs-top {
@@ -148,13 +158,25 @@ export default {
     flex-direction: column;
     gap: 34px;
     width: 100%;
+    @include breakpoint($xs) {
+      gap: 14px;
+    }
   }
   .inputs-flex {
     display: flex;
+    @include breakpoint($xs) {
+      flex-direction: column;
+    }
     width: 100%;
     gap: 34px;
+    @include breakpoint($xs) {
+      gap: 14px;
+    }
     input {
       width: 50%;
+      @include breakpoint($xs) {
+        width: 100%;
+      }
     }
   }
   .errors {
