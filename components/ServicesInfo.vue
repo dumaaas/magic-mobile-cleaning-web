@@ -112,9 +112,9 @@ export default {
   p {
     color: $primary-darker;
     font-size: 22px;
-
     @include breakpoint($xs) {
       font-size: 17px;
+      line-height: 22px;
     }
 
     &:first-child {

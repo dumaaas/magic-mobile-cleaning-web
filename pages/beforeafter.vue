@@ -13,41 +13,33 @@
         </div>
         <div class="gallery-pictures flex-col">
           <div class="gallery-pictures__first-row flex">
-            <div>
-              <img src="@/static/before.png" alt="before" />
+            <div class="flex-col">
+              <div>
+                <img src="@/static/before.png" alt="before" />
+              </div>
+              <div>
+                <img src="@/static/video2.png" alt="before" />
+              </div>
+              <div>
+                <img src="@/static/photo5.png" alt="after" />
+              </div>
             </div>
-            <div>
-              <img src="@/static/after.png" alt="after" />
+            <div class="flex-col">
+              <div>
+                <img src="@/static/video1.png" alt="before" />
+              </div>
+              <div>
+                <img src="@/static/video3.png" alt="before" />
+              </div>
             </div>
           </div>
           <div class="gallery-pictures__second-row flex">
             <div class="">
-              <img src="@/static/video1.png" alt="before" />
+              <img src="@/static/video4.png" alt="before" />
             </div>
 
-            <div class="flex-col">
-              <div>
-                <img src="@/static/photo3.png" alt="before" />
-              </div>
-              <div>
-                <img src="@/static/photo4.png" alt="before" />
-              </div>
-            </div>
-          </div>
-          <div class="gallery-pictures__third-row flex">
             <div>
-              <img src="@/static/photo5.png" alt="before" />
-            </div>
-            <div>
-              <img src="@/static/photo6.png" alt="after" />
-            </div>
-          </div>
-          <div class="gallery-pictures__fourth-row flex">
-              <div>
-              <img src="@/static/video2.png" alt="before" />
-            </div>
-            <div>
-              <img src="@/static/video3.png" alt="after" />
+              <img src="@/static/video5.png" alt="before" />
             </div>
           </div>
         </div>
@@ -69,14 +61,22 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_colors.scss";
+@import "@/assets/sass/abstracts/_mixins.scss";
 
 .flex {
   display: flex;
-  gap: 18px;
+  gap: 12px;
+
+  @include breakpoint($xs) {
+    gap: 6px;
+  }
 }
 .flex-col {
   display: flex;
-  gap: 14px;
+  gap: 8px;
+  @include breakpoint($xs) {
+    gap: 3px;
+  }
   flex-direction: column;
 }
 .gallery {
@@ -89,10 +89,20 @@ export default {
   p {
     color: $secondary-darker;
     font-size: 20px;
+    @include breakpoint($xs) {
+      font-size: 17px;
+      line-height: 22px;
+      text-align: center;
+      max-width: 330px;
+      margin: 0 auto;
+    }
   }
 
   &-pictures {
     padding-top: 70px;
+    @include breakpoint($xs) {
+      padding-top: 51px;
+    }
   }
 }
 </style>

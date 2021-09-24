@@ -34,7 +34,7 @@
                   scrolling="no"
                   marginheight="0"
                   marginwidth="0"
-                  src="https://maps.google.com/maps?width=834&amp;height=400&amp;hl=en&amp;q=5542 N Artesian Ave, Chicago, IL 60625, United States&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                  src="https://maps.google.com/maps?q=6071%20N%20Milwaukee%20Ave,%20Chicago,%20IL%2060646,%20USA&t=&z=13&ie=UTF8&iwloc=&output=embed"
                 ></iframe
                 ><a href="https://www.fnfgo.com/">FNF Go</a>
               </div>
