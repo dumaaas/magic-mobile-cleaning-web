@@ -59,7 +59,8 @@ export default {
     component: 'fa',
     icons: {
       solid: ['faPhoneAlt', 'faMapMarkerAlt', 'faEnvelope'],
-      brands: ['faFacebookF', 'faInstagram', 'faYoutube']
+      brands: ['faFacebookF', 'faInstagram', 'faYoutube'],
+      regular: ['faClock'],
     }
   },
 

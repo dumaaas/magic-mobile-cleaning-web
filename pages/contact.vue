@@ -11,6 +11,18 @@
       </div>
       <div class="contact-info">
         <div class="container contact-info__content">
+          <div class="open-hours mobile">
+            <h4>Open Hours</h4>
+            <div class="item">
+              <span class="item-icon">
+                <fa :icon="['far', 'clock']" />
+              </span>
+              <p class="item-data">
+                Monday - Saturday
+                <span> 8:00 AM - 6:00 AM </span>
+              </p>
+            </div>
+          </div>
           <ContactInfo mode="darker" />
           <div class="map">
             <div class="mapouter">
@@ -50,27 +62,85 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_colors.scss";
+@import "@/assets/sass/abstracts/_mixins.scss";
 
+.mobile {
+  display: none;
+  @include breakpoint($xs) {
+    display: block;
+  }
+}
 .contact {
   &-bg {
     padding: 70px 0;
     background: url("~@/static/contact.png") no-repeat center center scroll;
+    @include breakpoint($xs) {
+      padding: 20px 0;
+      background: url("~@/static/contact-mobile.png") no-repeat center center
+        scroll;
+      background-size: cover;
+    }
   }
 
   &-info {
     background-color: $tertiary-lighter;
     padding: 140px 0;
 
+    @include breakpoint($xs) {
+      padding: 73px 0;
+    }
+
     &__content {
       display: flex;
-      gap: 20px;
       justify-content: space-between;
+      gap: 20px;
+      @include breakpoint($xs) {
+        flex-direction: column;
+        gap: 60px;
+      }
+    }
+
+    .open-hours {
+      h4 {
+        text-transform: uppercase;
+        font-size: 1.313rem;
+        padding-bottom: 28px;
+        letter-spacing: 1.2px;
+        color: $primary-darker;
+      }
+
+      .item {
+        display: flex;
+
+        svg {
+          width: 19px;
+          height: 19px;
+          path {
+            fill: $primary-darker;
+          }
+        }
+
+        p {
+          padding-left: 5px;
+          color: $primary-darker;
+        }
+        span {
+          display: block;
+          color: $primary;
+          font-weight: 700;
+          letter-spacing: 1.2px;
+        }
+      }
     }
   }
 }
 
 .map {
   width: 50%;
+  @include breakpoint($xs) {
+    width: 100%;
+    height: 195px;
+  }
   .mapouter {
     position: relative;
     text-align: right;

@@ -84,6 +84,10 @@ export default {
       color: $primary-darker;
     }
 
+    @include breakpoint($xs) {
+      margin-top: 0;
+    }
+
     @include breakpoint($sm-only) {
       margin-top: 0px;
     }
