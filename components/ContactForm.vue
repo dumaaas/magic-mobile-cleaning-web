@@ -6,10 +6,11 @@
     </h3>
 
     <form
+      ref="form"
       id="form"
       autocomplete="off"
       spellcheck="false"
-      v-on:submit="handleSubmit"
+      @submit.prevent="sendEmail"
     >
       <div class="inputs">
         <div class="inputs-flex">
@@ -17,13 +18,13 @@
             type="text"
             v-model="formData.name"
             placeholder="name"
-            name="name"
+            name="from_name"
           />
           <input
             type="text"
             v-model="formData.email"
             placeholder="email"
-            name="email"
+            name="from_email"
           />
         </div>
         <div class="inputs-flex">
@@ -31,13 +32,13 @@
             type="text"
             v-model="formData.phone"
             placeholder="phone"
-            name="phone"
+            name="from_phone"
           />
           <input
             type="text"
             v-model="formData.carBrand"
             placeholder="car model"
-            name="carBrand"
+            name="from_carBrand"
           />
         </div>
       </div>
@@ -53,6 +54,8 @@
 </template>
 
 <script>
+import emailjs from "emailjs-com";
+
 export default {
   props: {
     mode: String,
@@ -87,19 +90,27 @@ export default {
     };
   },
   methods: {
-    handleSubmit: async function (e) {
-      e.preventDefault();
+    sendEmail() {
       if (!this.formData.name || !this.formData.email || !this.formData.phone) {
         this.formError = "Name, email and phone fields are reqired!";
         return;
       }
-      this.formError = "";
-      try {
-        await this.$strapi.$contacts.create(this.formData);
-        this.error = "";
-      } catch (error) {
-        this.error = error;
-      }
+      emailjs
+        .sendForm(
+          "magicmobile",
+          "magicmobiletemplate",
+          this.$refs.form,
+          "user_z5NqmTk6lre9kzsXeLomX"
+        )
+        .then(
+          (result) => {
+            this.formError = "";
+            this.$swal("Thanks for reaching us!", "We will contact you soon!", "success");
+          },
+          (error) => {
+            this.$swal("Something went wrong!", "Please try again!", "error");
+          }
+        );
     },
   },
 };
@@ -181,6 +192,9 @@ export default {
   }
   .errors {
     padding-top: 20px;
+    @include breakpoint($xs) {
+      padding: 10px 0 5px 0;
+    }
     span {
       color: #ed4337;
       font-size: 16px;

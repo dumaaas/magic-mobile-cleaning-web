@@ -1,5 +1,13 @@
 <template>
   <div>
+    <video
+      ref="videoRef"
+      src=""
+      id="video-container"
+      width="100%"
+      controls
+    ></video>
+
     <div class="container">
       <PageHeading>BEFORE & AFTER</PageHeading>
     </div>
@@ -14,7 +22,7 @@
         <div class="gallery-pictures flex-col">
           <div class="gallery-pictures__first-row flex">
             <div class="flex-col">
-              <div>
+              <div @click="openVideo">
                 <img src="@/static/before.png" alt="before" />
               </div>
               <div>
@@ -55,6 +63,13 @@ import PageHeading from "@/components/PageHeading.vue";
 export default {
   components: {
     PageHeading,
+  },
+  methods: {
+    openVideo() {
+      this.$refs.videoRef.src =
+        "http://iandevlin.github.io/mdn/video-player/video/tears-of-steel-battle-clip-medium.mp4";
+      this.$refs.videoRef.play();
+    },
   },
 };
 </script>

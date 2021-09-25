@@ -34,7 +34,7 @@
         </div>
         <div></div>
       </div>
-      <div class="header-menu mobile" :class="{ opened: opened }">
+      <div class="header-menu mobile" :class="{ opened: opened }" v-scroll-lock="opened">
         <div class="hamburger-close" @click="opened = false">
           <div></div>
           <div></div>
@@ -269,13 +269,13 @@ export default {
     }
     &.opened {
       transform: translateY(0);
-      transition: all 0.5s ease-in;
+      transition: all 0.3s ease-in;
+
     }
     &__links {
       display: flex;
       align-items: flex-end;
       padding: 19px 0 21px 0;
-
       ul {
         margin-top: -72px;
         flex-direction: column;
