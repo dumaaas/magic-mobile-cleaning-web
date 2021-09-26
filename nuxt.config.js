@@ -39,7 +39,7 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/scroll-lock.js', '~/plugins/vue-swal'],
+  plugins: ['~/plugins/scroll-lock.js', '~/plugins/vue-swal.js', '~/plugins/click-outside.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -58,7 +58,7 @@ export default {
   fontawesome: {
     component: 'fa',
     icons: {
-      solid: ['faPhoneAlt', 'faMapMarkerAlt', 'faEnvelope'],
+      solid: ['faPhoneAlt', 'faMapMarkerAlt', 'faEnvelope', 'faPlay'],
       brands: ['faFacebookF', 'faInstagram', 'faYoutube'],
       regular: ['faClock'],
     }
