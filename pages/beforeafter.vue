@@ -243,7 +243,10 @@ export default {
   &-container {
     position: relative;
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1000px;
+    @include breakpoint($small-only) {
+      max-width: 900px;
+    }
     margin: 0 auto;
     transition: all 0.3s ease;
 
@@ -286,6 +289,7 @@ export default {
 
   video {
     border: 5px solid $primary;
+    height: auto;
   }
 
   img {
