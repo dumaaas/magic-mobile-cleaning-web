@@ -22,11 +22,11 @@
       </section>
     </transition>
 
-    <transition name="modal">
+    <transition name="modal" >
       <section class="modal" v-show="showImage" v-scroll-lock="showImage">
         <div class="modal-mask">
           <div class="modal-wrapper">
-            <div class="modal-container">
+            <div class="modal-container" >
               <div class="modal-container__btn" @click="hideVideo">
                 <div></div>
                 <div></div>
@@ -41,7 +41,7 @@
     <div class="container">
       <PageHeading>BEFORE & AFTER</PageHeading>
     </div>
-    <div class="gallery" v-click-outside="hideVideo">
+    <div class="gallery">
       <div class="container">
         <div class="gallery-title">
           <p>
