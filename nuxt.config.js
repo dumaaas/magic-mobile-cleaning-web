@@ -61,8 +61,8 @@ export default {
         port: 465,
         secure: true,
         auth: {
-          user: 'markodumnic8@gmail.com',
-          pass: 'Novasifra2210'
+          user: process.env.EMAIL_USERNAME,
+          pass: process.env.EMAIL_PASSWORD
         },
       },
     }],
@@ -83,7 +83,7 @@ export default {
   },
 
   axios: {
-    // proxy: true
+    baseURL: process.env.BASE_URL
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
