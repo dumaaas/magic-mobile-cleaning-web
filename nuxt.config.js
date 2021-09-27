@@ -83,7 +83,7 @@ export default {
   },
 
   axios: {
-    baseURL: process.env.BASE_URL
+    baseURL: 'https://magic-mobile-cleaning.netlify.app/'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
