@@ -1,6 +1,6 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  target: 'server',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -48,7 +48,25 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/strapi', '@nuxtjs/axios', '@nuxtjs/fontawesome'],
+  modules: [
+    '@nuxtjs/strapi',
+    '@nuxtjs/axios',
+    '@nuxtjs/fontawesome',
+    ['nuxt-mail', {
+      message: {
+        to: 'markodumnic8@gmail.com',
+      },
+      smtp: {
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+          user: 'markodumnic8@gmail.com',
+          pass: 'Novasifra2210'
+        },
+      },
+    }],
+  ],
 
   strapi: {
     entities: ['mains', 'header-links', 'contacts', 'galleries'],
@@ -73,5 +91,7 @@ export default {
     vendor: ['vue-swal']
   },
 
-  loading: { color: '#3B8070' },
+  loading: {
+    color: '#3B8070'
+  },
 }

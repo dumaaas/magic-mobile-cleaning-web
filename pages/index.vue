@@ -22,7 +22,7 @@
     <section class="offers container">
       <div class="offers-heading">
         <h2>
-          <span> If you love your care </span>
+          <span> If you love your car </span>
           we will make it shine!
         </h2>
       </div>
@@ -275,9 +275,9 @@ export default {
 }
 
 .mobile {
-  display: none;
+  display: none !important;
   @include breakpoint($xs) {
-    display: block;
+    display: block !important;
   }
 }
 
@@ -492,8 +492,9 @@ export default {
         .title {
           display: flex;
           justify-content: space-between;
-
+          align-items: center;
           .arrow {
+            margin-top: 2px;
             border: solid $secondary;
             border-width: 0 3px 3px 0;
             display: inline-block;

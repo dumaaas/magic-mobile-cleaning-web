@@ -95,22 +95,27 @@ export default {
         this.formError = "Name, email and phone fields are reqired!";
         return;
       }
-      emailjs
-        .sendForm(
-          "magicmobile",
-          "magicmobiletemplate",
-          this.$refs.form,
-          "user_z5NqmTk6lre9kzsXeLomX"
-        )
-        .then(
-          (result) => {
-            this.formError = "";
-            this.$swal("Thanks for reaching us!", "We will contact you soon!", "success");
-          },
-          (error) => {
-            this.$swal("Something went wrong!", "Please try again!", "error");
-          }
-        );
+      this.$mail.send({
+        from: this.formData.email,
+        subject: 'Kako si sta radis?',
+        text: this.formData.phone
+      })
+      // emailjs
+      //   .sendForm(
+      //     "magicmobile",
+      //     "magicmobiletemplate",
+      //     this.$refs.form,
+      //     "user_z5NqmTk6lre9kzsXeLomX"
+      //   )
+      //   .then(
+      //     (result) => {
+      //       this.formError = "";
+      //       this.$swal("Thanks for reaching us!", "We will contact you soon!", "success");
+      //     },
+      //     (error) => {
+      //       this.$swal("Something went wrong!", "Please try again!", "error");
+      //     }
+      //   );
     },
   },
 };
