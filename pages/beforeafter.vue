@@ -224,7 +224,7 @@ export default {
     &__item {
       flex-basis: 32.78%;
       @include breakpoint($xs) {
-        flex-basis: 48.87%;
+        flex-basis: 48.28%;
       }
     }
     @include breakpoint($xs) {
