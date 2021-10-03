@@ -22,11 +22,11 @@
       </section>
     </transition>
 
-    <transition name="modal" >
+    <transition name="modal">
       <section class="modal" v-show="showImage" v-scroll-lock="showImage">
         <div class="modal-mask">
           <div class="modal-wrapper">
-            <div class="modal-container" >
+            <div class="modal-container">
               <div class="modal-container__btn" @click="hideVideo">
                 <div></div>
                 <div></div>
@@ -49,51 +49,89 @@
             sure we do a great job!
           </p>
         </div>
-        <div class="gallery-pictures flex-col">
-          <div class="gallery-pictures__first-row flex">
-            <div class="flex-col">
-              <div @click="openImage(1)">
-                <img src="@/static/gallery_img1.png" alt="before" />
-              </div>
-              <div class="video">
-                <div class="play-btn" @click="openVideo(2)">
-                  <fa :icon="['fa', 'play']" />
-                </div>
-                <img src="@/static/video2.png" alt="before" />
-              </div>
-              <div @click="openImage(2)">
-                <img src="@/static/gallery_img2.png" alt="after" />
-              </div>
+        <div class="gallery-pictures">
+          <div class="gallery-pictures__item video">
+            <div class="play-btn" @click="openVideo(1)">
+              <fa :icon="['fa', 'play']" />
             </div>
-            <div class="flex-col">
-              <div class="video">
-                <div class="play-btn" @click="openVideo(1)">
-                  <fa :icon="['fa', 'play']" />
-                </div>
-                <img src="@/static/video1.png" alt="before" />
-              </div>
-              <div class="video">
-                <div class="play-btn" @click="openVideo(3)">
-                  <fa :icon="['fa', 'play']" />
-                </div>
-                <img src="@/static/video3.png" alt="before" />
-              </div>
-            </div>
+            <img src="@/static/video1.png" alt="before" />
           </div>
-          <div class="gallery-pictures__second-row flex">
-            <div class="video">
-              <div class="play-btn" @click="openVideo(4)">
-                <fa :icon="['fa', 'play']" />
-              </div>
-              <img src="@/static/video4.png" alt="before" />
-            </div>
+          <div class="gallery-pictures__item" @click="openImage(1)">
+            <img src="@/static/gallery_img1.png" alt="before" />
+          </div>
+          <div class="gallery-pictures__item" @click="openImage(2)">
+            <img src="@/static/gallery_img2.png" alt="before" />
+          </div>
 
-            <div class="video">
-              <div class="play-btn" @click="openVideo(5)">
-                <fa :icon="['fa', 'play']" />
-              </div>
-              <img src="@/static/video5.png" alt="before" />
+          <div class="gallery-pictures__item" @click="openImage(3)">
+            <img src="@/static/gallery_img3.png" alt="before" />
+          </div>
+          <div class="gallery-pictures__item" @click="openImage(4)">
+            <img src="@/static/gallery_img4.png" alt="before" />
+          </div>
+          <div class="gallery-pictures__item video">
+            <div class="play-btn" @click="openVideo(2)">
+              <fa :icon="['fa', 'play']" />
             </div>
+            <img src="@/static/video2.png" alt="before" />
+          </div>
+
+          <div class="gallery-pictures__item" @click="openImage(5)">
+            <img src="@/static/gallery_img5.png" alt="before" />
+          </div>
+          <div class="gallery-pictures__item" @click="openImage(6)">
+            <img src="@/static/gallery_img6.png" alt="before" />
+          </div>
+          <div class="gallery-pictures__item" @click="openImage(7)">
+            <img src="@/static/gallery_img7.png" alt="before" />
+          </div>
+
+          <div class="gallery-pictures__item" @click="openImage(8)">
+            <img src="@/static/gallery_img8.png" alt="before" />
+          </div>
+          <div class="gallery-pictures__item" @click="openImage(9)">
+            <img src="@/static/gallery_img9.png" alt="before" />
+          </div>
+          <div class="gallery-pictures__item" @click="openImage(10)">
+            <img src="@/static/gallery_img10.png" alt="before" />
+          </div>
+
+          <div class="gallery-pictures__item video">
+            <div class="play-btn" @click="openVideo(3)">
+              <fa :icon="['fa', 'play']" />
+            </div>
+            <img src="@/static/video3.png" alt="before" />
+          </div>
+          <div class="gallery-pictures__item" @click="openImage(11)">
+            <img src="@/static/gallery_img11.png" alt="before" />
+          </div>
+          <div class="gallery-pictures__item" @click="openImage(12)">
+            <img src="@/static/gallery_img12.png" alt="before" />
+          </div>
+          <div class="gallery-pictures__item video">
+            <div class="play-btn" @click="openVideo(4)">
+              <fa :icon="['fa', 'play']" />
+            </div>
+            <img src="@/static/video4.png" alt="before" />
+          </div>
+          <div class="gallery-pictures__item video">
+            <div class="play-btn" @click="openVideo(5)">
+              <fa :icon="['fa', 'play']" />
+            </div>
+            <img src="@/static/video5.png" alt="before" />
+          </div>
+          <div class="gallery-pictures__item" @click="openImage(13)">
+            <img src="@/static/gallery_img13.png" alt="before" />
+          </div>
+
+          <div class="gallery-pictures__item" @click="openImage(14)">
+            <img src="@/static/gallery_img14.png" alt="before" />
+          </div>
+          <div class="gallery-pictures__item" @click="openImage(15)">
+            <img src="@/static/gallery_img15.png" alt="before" />
+          </div>
+          <div class="gallery-pictures__item" @click="openImage(16)">
+            <img src="@/static/gallery_img16.png" alt="before" />
           </div>
         </div>
       </div>
@@ -159,7 +197,7 @@ export default {
 }
 .gallery {
   background-color: $tertiary-lighter;
-  padding: 51px 0 96px 0;
+  padding: 70px 0 115px 0;
   img {
     object-fit: cover;
     width: 100%;
@@ -167,6 +205,8 @@ export default {
   p {
     color: $secondary-darker;
     font-size: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #d8d8d8;
     @include breakpoint($xs) {
       font-size: 17px;
       line-height: 22px;
@@ -177,7 +217,16 @@ export default {
   }
 
   &-pictures {
-    padding-top: 70px;
+    padding-top: 90px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    &__item {
+      flex-basis: 32.78%;
+      @include breakpoint($xs) {
+        flex-basis: 48.87%;
+      }
+    }
     @include breakpoint($xs) {
       padding-top: 51px;
     }
