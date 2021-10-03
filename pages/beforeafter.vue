@@ -56,17 +56,17 @@
             </div>
             <img src="@/static/video1.png" alt="before" />
           </div>
-          <div class="gallery-pictures__item" @click="openImage(1)">
+          <div class="gallery-pictures__item img-wrapper" @click="openImage(1)">
             <img src="@/static/gallery_img1.png" alt="before" />
           </div>
-          <div class="gallery-pictures__item" @click="openImage(2)">
+          <div class="gallery-pictures__item img-wrapper" @click="openImage(2)">
             <img src="@/static/gallery_img2.png" alt="before" />
           </div>
 
-          <div class="gallery-pictures__item" @click="openImage(3)">
+          <div class="gallery-pictures__item img-wrapper" @click="openImage(3)">
             <img src="@/static/gallery_img3.png" alt="before" />
           </div>
-          <div class="gallery-pictures__item" @click="openImage(4)">
+          <div class="gallery-pictures__item img-wrapper" @click="openImage(4)">
             <img src="@/static/gallery_img4.png" alt="before" />
           </div>
           <div class="gallery-pictures__item video">
@@ -76,23 +76,26 @@
             <img src="@/static/video2.png" alt="before" />
           </div>
 
-          <div class="gallery-pictures__item" @click="openImage(5)">
+          <div class="gallery-pictures__item img-wrapper" @click="openImage(5)">
             <img src="@/static/gallery_img5.png" alt="before" />
           </div>
-          <div class="gallery-pictures__item" @click="openImage(6)">
+          <div class="gallery-pictures__item img-wrapper" @click="openImage(6)">
             <img src="@/static/gallery_img6.png" alt="before" />
           </div>
-          <div class="gallery-pictures__item" @click="openImage(7)">
+          <div class="gallery-pictures__item img-wrapper" @click="openImage(7)">
             <img src="@/static/gallery_img7.png" alt="before" />
           </div>
 
-          <div class="gallery-pictures__item" @click="openImage(8)">
+          <div class="gallery-pictures__item img-wrapper" @click="openImage(8)">
             <img src="@/static/gallery_img8.png" alt="before" />
           </div>
-          <div class="gallery-pictures__item" @click="openImage(9)">
+          <div class="gallery-pictures__item img-wrapper" @click="openImage(9)">
             <img src="@/static/gallery_img9.png" alt="before" />
           </div>
-          <div class="gallery-pictures__item" @click="openImage(10)">
+          <div
+            class="gallery-pictures__item img-wrapper"
+            @click="openImage(10)"
+          >
             <img src="@/static/gallery_img10.png" alt="before" />
           </div>
 
@@ -102,10 +105,16 @@
             </div>
             <img src="@/static/video3.png" alt="before" />
           </div>
-          <div class="gallery-pictures__item" @click="openImage(11)">
+          <div
+            class="gallery-pictures__item img-wrapper"
+            @click="openImage(11)"
+          >
             <img src="@/static/gallery_img11.png" alt="before" />
           </div>
-          <div class="gallery-pictures__item" @click="openImage(12)">
+          <div
+            class="gallery-pictures__item img-wrapper"
+            @click="openImage(12)"
+          >
             <img src="@/static/gallery_img12.png" alt="before" />
           </div>
           <div class="gallery-pictures__item video">
@@ -120,17 +129,29 @@
             </div>
             <img src="@/static/video5.png" alt="before" />
           </div>
-          <div class="gallery-pictures__item" @click="openImage(13)">
+          <div
+            class="gallery-pictures__item img-wrapper"
+            @click="openImage(13)"
+          >
             <img src="@/static/gallery_img13.png" alt="before" />
           </div>
 
-          <div class="gallery-pictures__item desktop" @click="openImage(14)">
+          <div
+            class="gallery-pictures__item desktop img-wrapper"
+            @click="openImage(14)"
+          >
             <img src="@/static/gallery_img14.png" alt="before" />
           </div>
-          <div class="gallery-pictures__item" @click="openImage(15)">
+          <div
+            class="gallery-pictures__item img-wrapper"
+            @click="openImage(15)"
+          >
             <img src="@/static/gallery_img15.png" alt="before" />
           </div>
-          <div class="gallery-pictures__item" @click="openImage(16)">
+          <div
+            class="gallery-pictures__item img-wrapper"
+            @click="openImage(16)"
+          >
             <img src="@/static/gallery_img16.png" alt="before" />
           </div>
         </div>
@@ -228,6 +249,28 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    .img-wrapper {
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .img-wrapper img {
+      -webkit-transition: all 0.9s ease;
+      -moz-transition: all 0.2s ease;
+      -ms-transition: all 0.9s ease;
+      -o-transition: all 0.9s ease;
+      transition: all 0.9s ease;
+
+      vertical-align: middle;
+    }
+
+    .img-wrapper img:hover {
+      -webkit-transform: scale(1.3); /* Safari and Chrome */
+      -moz-transform: scale(1.3); /* Firefox */
+      -ms-transform: scale(1.3); /* IE 9 */
+      -o-transform: scale(1.3); /* Opera */
+      transform: scale(1.3);
+    }
     &__item {
       flex-basis: 32.4%;
       @include breakpoint($xs) {
