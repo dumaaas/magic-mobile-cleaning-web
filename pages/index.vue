@@ -94,8 +94,8 @@
         </div>
       </div>
     </section>
-    <section class="gallery desktop">
-      <div class="gallery-container container">
+    <section class="gallery">
+      <div class="gallery-container container desktop">
         <div class="gallery-cards">
           <div class="card">
             <img src="@/static/before.png" alt="Before" />
@@ -106,18 +106,35 @@
         </div>
         <div class="gallery-bottom">
           <div class="gallery-bottom__title">
-            <p>Before and After</p>
+            <p>Before & After</p>
           </div>
           <div class="gallery-bottom__line"></div>
           <div class="gallery-bottom__btn">
-            <button
-              id="show-modal"
-              @click="openGallery"
-              class="btn btn-tertiary"
+            <nuxt-link class="btn btn-tertiary" to="/beforeafter"
+              >View Gallery</nuxt-link
             >
-              View Gallery
-            </button>
           </div>
+        </div>
+      </div>
+      <div class="gallery-mobile mobile">
+        <div class="gallery-mobile__heading">
+          <h3>Before & After</h3>
+        </div>
+        <div class="gallery-mobile__images">
+          <div>
+            <img src="@/static/mobileBefore.png" alt="before" />
+          </div>
+          <div>
+            <img src="@/static/mobileMiddle.png" alt="before" />
+          </div>
+          <div>
+            <img src="@/static/mobileAfter.png" alt="before" />
+          </div>
+        </div>
+        <div class="gallery-mobile__btn">
+          <nuxt-link class="btn btn-tertiary" to="/beforeafter"
+            >View Gallery</nuxt-link
+          >
         </div>
       </div>
     </section>
@@ -282,9 +299,9 @@ export default {
 }
 
 .desktop {
-  display: block;
+  display: block !important;
   @include breakpoint($xs) {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -645,6 +662,35 @@ export default {
     &__line {
       flex-grow: 1;
       border-bottom: 1px solid $primary;
+    }
+  }
+
+  &-mobile {
+    padding: 60px 0;
+    &__heading {
+      h3 {
+        padding-bottom: 40px;
+        color: $primary-darker;
+        text-transform: uppercase;
+        text-align: center;
+      }
+    }
+    &__btn {
+      a {
+        text-align: center;
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+      }
+    }
+    &__images {
+      padding-bottom: 40px;
+      gap: 15px;
+      display: flex;
+      justify-content: space-between;
+      img {
+        width: 100%;
+      }
     }
   }
 }
