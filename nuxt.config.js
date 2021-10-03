@@ -59,7 +59,6 @@ export default {
       smtp: {
         host: 'smtp.gmail.com',
         port: 465,
-        secure: true,
         auth: {
           user: process.env.EMAIL_USERNAME,
           pass: process.env.EMAIL_PASSWORD
@@ -83,7 +82,6 @@ export default {
   },
 
   axios: {
-    baseURL: 'https://magic-mobile-cleaning.netlify.app/'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
