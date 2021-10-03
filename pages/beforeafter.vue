@@ -124,7 +124,7 @@
             <img src="@/static/gallery_img13.png" alt="before" />
           </div>
 
-          <div class="gallery-pictures__item" @click="openImage(14)">
+          <div class="gallery-pictures__item desktop" @click="openImage(14)">
             <img src="@/static/gallery_img14.png" alt="before" />
           </div>
           <div class="gallery-pictures__item" @click="openImage(15)">
@@ -195,6 +195,12 @@ export default {
   }
   flex-direction: column;
 }
+.desktop {
+  display: block;
+  @include breakpoint($xs) {
+    display: none;
+  }
+}
 .gallery {
   background-color: $tertiary-lighter;
   padding: 70px 0 115px 0;
@@ -220,9 +226,10 @@ export default {
     padding-top: 90px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
     &__item {
-      flex-basis: 32.78%;
+      flex-basis: 32.4%;
       @include breakpoint($xs) {
         flex-basis: 48.28%;
       }
