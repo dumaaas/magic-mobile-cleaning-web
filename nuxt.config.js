@@ -32,6 +32,11 @@ export default {
     }]
   },
 
+  serverMiddleware: [{
+    path: 'api',
+    handler: '~/serverMiddleware/api'
+  }],
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     // SCSS file in the project
@@ -57,8 +62,8 @@ export default {
         to: 'markodumnic8@gmail.com',
       },
       smtp: {
-        host: 'smtp.gmail.com',
-        port: 465,
+        host: 'smtp-relay.sendinblue.com',
+        port: 587,
         auth: {
           user: process.env.EMAIL_USERNAME,
           pass: process.env.EMAIL_PASSWORD
@@ -81,8 +86,7 @@ export default {
     }
   },
 
-  axios: {
-  },
+  axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

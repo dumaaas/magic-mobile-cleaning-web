@@ -95,11 +95,12 @@ export default {
         this.formError = "Name, email and phone fields are reqired!";
         return;
       }
-      this.$mail.send({
-        from: this.formData.email,
-        subject: 'Kako si sta radis?',
-        text: this.formData.phone
-      })
+      this.$axios.post('/api/send');
+      // this.$mail.send({
+      //   from: this.formData.email,
+      //   subject: 'Kako si sta radis?',
+      //   text: this.formData.phone
+      // })
       // emailjs
       //   .sendForm(
       //     "magicmobile",
