@@ -10,7 +10,9 @@
               <div></div>
             </div>
             <div class="modal-container">
-              <div
+
+              <div class="modal-container__slide">
+                              <div
                 class="left arrow desktop"
                 @click="openSlide(currentSlide - 1)"
               >
@@ -86,20 +88,20 @@
                   />
                 </svg>
               </div>
-
-              <video
-                v-show="showVideo"
-                ref="videoRef"
-                :src="require(`@/static/${videoSrc}.mp4`)"
-                id="video-container"
-                width="100%"
-                controls
-              ></video>
-              <img
-                v-show="showImage"
-                :src="require(`@/static/${imgSrc}.png`)"
-                width="100%"
-              />
+                <video
+                  v-show="showVideo"
+                  ref="videoRef"
+                  :src="require(`@/static/${videoSrc}.mp4`)"
+                  id="video-container"
+                  width="100%"
+                  controls
+                ></video>
+                <img
+                  v-show="showImage"
+                  :src="require(`@/static/${imgSrc}.png`)"
+                  width="100%"
+                />
+              </div>
             </div>
           </div>
         </div>
