@@ -14,12 +14,9 @@
 </template>
 
 <script>
-import SocialIcons from "@/components/SocialIcons.vue";
 
 export default {
-  components: {
-    SocialIcons,
-  },
+
 };
 </script>
 
@@ -47,9 +44,10 @@ footer {
         display: inline-block;
         letter-spacing: 1.2px;
         color: #edf3f4;
+        font-size: 1rem;
         @include breakpoint($xs) {
           padding-top: 27px;
-          font-size: 0.85rem;
+          font-size: 0.75rem;
         }
       }
     }

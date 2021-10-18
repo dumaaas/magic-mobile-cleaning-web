@@ -169,10 +169,38 @@ export default {};
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_colors.scss";
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+.navbar.vue-fixed-header--isFixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+
+  .logo {
+    @include breakpoint($xs) {
+      height: 44px;
+    }
+    height: 50px;
+    transition: all 0.4s ease-in;
+
+    svg {
+      height: 230px;
+      margin-top: -98px;
+      @include breakpoint($xs) {
+        width: 155px;
+        height: 156px;
+        margin-top: -59px;
+      }
+      transition: all 0.4s ease-in;
+    }
+  }
+}
+
 .logo {
   vertical-align: middle;
   padding-top: 4px;
   height: 150px;
+  transition: all 0.4s ease-in;
 
   .nuxt-link-exact-active {
     border-bottom: 0;
@@ -188,6 +216,8 @@ export default {};
     width: 402px;
     height: 402px;
     margin-top: -132px;
+    transition: all 0.4s ease-in;
+
     @include breakpoint($xs) {
       width: 155px;
       height: 156px;

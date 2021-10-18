@@ -54,8 +54,6 @@
 </template>
 
 <script>
-import emailjs from "emailjs-com";
-
 export default {
   props: {
     mode: String,
@@ -95,7 +93,7 @@ export default {
         this.formError = "Name, email and phone fields are reqired!";
         return;
       }
-      this.$axios.post('/api/send');
+      this.$axios.post("/api/send");
       // this.$mail.send({
       //   from: this.formData.email,
       //   subject: 'Kako si sta radis?',
@@ -148,11 +146,18 @@ export default {
     color: $secondary;
     letter-spacing: 1.5px;
     line-height: 1.875rem;
+    @include breakpoint($xs) {
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+    }
   }
   span {
     font-size: 1.125rem;
     font-weight: 400;
     display: block;
+    @include breakpoint($xs) {
+      font-size: 0.75rem;
+    }
   }
   form {
     padding-top: 60px;

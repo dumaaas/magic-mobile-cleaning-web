@@ -1,5 +1,17 @@
 <template>
   <div class="contactus" :class="mode">
+    <div class="open-hours">
+      <h4>Open Hours</h4>
+      <div class="item">
+        <span class="item-icon">
+          <fa :icon="['far', 'clock']" />
+        </span>
+        <p class="item-data">
+          Monday - Saturday
+          <span> 8:00 AM - 6:00 PM </span>
+        </p>
+      </div>
+    </div>
     <div class="contactus-info">
       <h4>Contact Us</h4>
       <div class="item" v-for="contact in contacts" :key="contact.name">
@@ -15,7 +27,10 @@
           </span>
           <span v-else-if="contact.name === 'Phone'">
             <a href="tel:+1 773-209-3754">
-              {{ contact.content }}
+              {{ splitString(contact.content, 0) }};
+            </a>
+            <a href="tel:+1 312-200-2093">
+              {{ splitString(contact.content, 1) }}
             </a>
           </span>
           <span v-else>
@@ -48,7 +63,7 @@ export default {
         {
           iconName: "phone-alt",
           name: "Phone",
-          content: "(773) 209 3850 (312) 200 2093",
+          content: "(773) 209 3754; (312) 200 2093",
         },
         {
           iconName: "envelope",
@@ -58,6 +73,13 @@ export default {
       ],
     };
   },
+  methods: {
+    splitString(string, i) {
+      var words = string.split(";");
+      console.log(words, 'ovo su words');
+      return words[i];
+    }
+  }
 };
 </script>
 
@@ -67,7 +89,50 @@ export default {
 
 .contactus {
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
+
+  .open-hours {
+    display: none;
+    padding-bottom: 50px;
+
+    h4 {
+      font-size: 1.625rem;
+      padding-bottom: 48px;
+      letter-spacing: 1.2px;
+      @include breakpoint($xs) {
+        font-size: 1.313rem;
+              padding-bottom: 28px;
+
+      }
+      text-transform: uppercase;
+
+      color: $primary-darker;
+    }
+
+    .item {
+      display: flex;
+
+      svg {
+        width: 19px;
+        height: 19px;
+        path {
+          fill: $primary-darker;
+        }
+      }
+
+      p {
+        padding-left: 5px;
+        color: $primary-darker;
+      }
+      span {
+        display: block;
+        color: $primary;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+      }
+    }
+  }
 
   @include breakpoint($xs) {
     margin-top: 67px;
@@ -80,6 +145,9 @@ export default {
   }
 
   &.darker {
+    .open-hours {
+      display: block;
+    }
     h4 {
       color: $primary-darker;
     }

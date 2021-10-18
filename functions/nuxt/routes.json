@@ -1,0 +1,37 @@
+[
+  {
+    "name": "aboutus",
+    "path": "/aboutus",
+    "component": "D:\\\\Programiranje\\\\Private Projects\\\\magic-mobile-cleaning\\\\pages\\\\aboutus.vue",
+    "chunkName": "pages/aboutus",
+    "_name": "_66bb8aba"
+  },
+  {
+    "name": "beforeafter",
+    "path": "/beforeafter",
+    "component": "D:\\\\Programiranje\\\\Private Projects\\\\magic-mobile-cleaning\\\\pages\\\\beforeafter.vue",
+    "chunkName": "pages/beforeafter",
+    "_name": "_a3396716"
+  },
+  {
+    "name": "contact",
+    "path": "/contact",
+    "component": "D:\\\\Programiranje\\\\Private Projects\\\\magic-mobile-cleaning\\\\pages\\\\contact.vue",
+    "chunkName": "pages/contact",
+    "_name": "_56413958"
+  },
+  {
+    "name": "services",
+    "path": "/services",
+    "component": "D:\\\\Programiranje\\\\Private Projects\\\\magic-mobile-cleaning\\\\pages\\\\services.vue",
+    "chunkName": "pages/services",
+    "_name": "_3edc4556"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\Programiranje\\\\Private Projects\\\\magic-mobile-cleaning\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_1e2885ec"
+  }
+]

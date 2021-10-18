@@ -6,9 +6,6 @@
         backgroundImage: `url(` + require(`~/static/services-${service}.png`),
       }"
     >
-      <div class="container">
-        <h2>{{ service }} detailing</h2>
-      </div>
     </div>
     <div
       class="services-cover mobile"
@@ -47,7 +44,7 @@ export default {
 }
 .services-cover {
   background-size: cover;
-
+  height: 523px;
   &.mobile {
     height: 200px;
   }

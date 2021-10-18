@@ -16,22 +16,14 @@
   </div>
 </template>
 <script>
-import PageHeading from "@/components/PageHeading.vue";
-import ServicesCover from "@/components/ServicesCover.vue";
-import ServicesInfo from "@/components/ServicesInfo.vue";
 
 export default {
-  components: {
-    PageHeading,
-    ServicesCover,
-    ServicesInfo,
-  },
   data() {
     return {
       interior: {
         name: "interior",
         paragraphs: [
-          "<span style='text-transform: uppercase; color: #0b4051; font-weight: 700;'>Interior Detailing</span> keeps the vehicle in its best possible condition. This is a complex operation that requires multiple steps. Interior detailing is taking care of everything inside the car.",
+          "<span style='text-transform: uppercase; color: #0b4051; font-weight: 700;'>Interior Detailing</span> keeps the vehicle in it's best possible condition.. This is a complex operation that requires multiple steps. Interior detailing is taking care of everything inside the car.",
           "Detailing is more than a cleaning process to make a vehicle look good,but a systematic approach to help extend its life with methods and products that reduce damaging environmental elements such as dirt, sun, harsh winters.",
           "This is achieved by removing  both visible and invisible contaminants from the vehicle's interior. Basic interior detail options includean interior vacuuming, window cleaning and surface polishing.",
         ],

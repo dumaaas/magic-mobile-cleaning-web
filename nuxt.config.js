@@ -1,7 +1,7 @@
-export default {
+module.exports = {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'server',
-
+  debug: true,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'magic-mobile-cleaning',
@@ -54,7 +54,6 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/strapi',
     '@nuxtjs/axios',
     '@nuxtjs/fontawesome',
     ['nuxt-mail', {
@@ -71,11 +70,6 @@ export default {
       },
     }],
   ],
-
-  strapi: {
-    entities: ['mains', 'header-links', 'contacts', 'galleries'],
-    url: 'https://cleaning-cms.herokuapp.com/'
-  },
 
   fontawesome: {
     component: 'fa',

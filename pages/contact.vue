@@ -11,18 +11,6 @@
       </div>
       <div class="contact-info">
         <div class="container contact-info__content">
-          <div class="open-hours mobile">
-            <h4>Open Hours</h4>
-            <div class="item">
-              <span class="item-icon">
-                <fa :icon="['far', 'clock']" />
-              </span>
-              <p class="item-data">
-                Monday - Saturday
-                <span> 8:00 AM - 6:00 AM </span>
-              </p>
-            </div>
-          </div>
           <ContactInfo mode="darker" />
           <div class="map">
             <div class="mapouter">
@@ -47,16 +35,8 @@
 </template>
 
 <script>
-import PageHeading from "@/components/PageHeading.vue";
-import ContactForm from "@/components/ContactForm.vue";
-import ContactInfo from "@/components/ContactInfo.vue";
 
 export default {
-  components: {
-    PageHeading,
-    ContactForm,
-    ContactInfo,
-  },
 };
 </script>
 
@@ -97,39 +77,6 @@ export default {
       @include breakpoint($xs) {
         flex-direction: column;
         gap: 60px;
-      }
-    }
-
-    .open-hours {
-      h4 {
-        text-transform: uppercase;
-        font-size: 1.313rem;
-        padding-bottom: 28px;
-        letter-spacing: 1.2px;
-        color: $primary-darker;
-      }
-
-      .item {
-        display: flex;
-
-        svg {
-          width: 19px;
-          height: 19px;
-          path {
-            fill: $primary-darker;
-          }
-        }
-
-        p {
-          padding-left: 5px;
-          color: $primary-darker;
-        }
-        span {
-          display: block;
-          color: $primary;
-          font-weight: 700;
-          letter-spacing: 1.2px;
-        }
       }
     }
   }

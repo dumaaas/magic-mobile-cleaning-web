@@ -1,0 +1,35 @@
+{
+  "ContactForm": {
+    "description": "Auto imported from components/ContactForm.vue"
+  },
+  "ContactInfo": {
+    "description": "Auto imported from components/ContactInfo.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/Footer.vue"
+  },
+  "Header": {
+    "description": "Auto imported from components/Header.vue"
+  },
+  "Logo": {
+    "description": "Auto imported from components/Logo.vue"
+  },
+  "NuxtLogo": {
+    "description": "Auto imported from components/NuxtLogo.vue"
+  },
+  "PageHeading": {
+    "description": "Auto imported from components/PageHeading.vue"
+  },
+  "ServicesCover": {
+    "description": "Auto imported from components/ServicesCover.vue"
+  },
+  "ServicesInfo": {
+    "description": "Auto imported from components/ServicesInfo.vue"
+  },
+  "SocialIcons": {
+    "description": "Auto imported from components/SocialIcons.vue"
+  },
+  "Track": {
+    "description": "Auto imported from components/Track.vue"
+  }
+}

@@ -1,70 +1,76 @@
 <template>
   <header class="header">
-    <div class="header-bg">
-      <div class="header-top desktop">
-        <div class="header-top__social">
-          <SocialIcons />
+    <fixed-header :threshold="400">
+      <div class="navbar">
+        <div class="header-bg">
+          <div class="header-top desktop">
+            <div class="header-top__social">
+              <SocialIcons />
+            </div>
+            <div class="header-top__logo">
+              <Logo />
+            </div>
+            <div class="header-top__contact">
+              <p>
+                <fa :icon="['fa', 'phone-alt']" /> (773) 209 3754 / (312) 200
+                2093
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="header-top__logo">
-          <Logo />
-        </div>
-        <div class="header-top__contact">
-          <p>
-            <fa :icon="['fa', 'phone-alt']" /> (773) 209 3754 / (312) 200 2093
-          </p>
+
+        <div class="header-main">
+          <div class="header-main__links desktop">
+            <ul>
+              <li v-for="link in mainLinks" :key="link.name">
+                <nuxt-link :to="`${link.url}`">{{ link.name }}</nuxt-link>
+              </li>
+            </ul>
+          </div>
+          <div class="header-main__mobile mobile">
+            <div class="header-main__mobile-hamburger" @click="opened = true">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="header-main__mobile-logo">
+              <Logo />
+            </div>
+            <div></div>
+          </div>
+          <div
+            class="header-menu mobile"
+            :class="{ opened: opened }"
+            v-scroll-lock="opened"
+          >
+            <div class="hamburger-close" @click="opened = false">
+              <div></div>
+              <div></div>
+            </div>
+            <div class="header-menu__links">
+              <ul>
+                <li
+                  @click="opened = false"
+                  v-for="link in mainLinks"
+                  :key="link.name"
+                >
+                  <nuxt-link :to="`${link.url}`">{{ link.name }}</nuxt-link>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="header-main">
-      <div class="header-main__links desktop">
-        <ul>
-          <li v-for="link in mainLinks" :key="link.name">
-            <nuxt-link :to="`${link.url}`">{{ link.name }}</nuxt-link>
-          </li>
-        </ul>
-      </div>
-      <div class="header-main__mobile mobile">
-        <div class="header-main__mobile-hamburger" @click="opened = true">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="header-main__mobile-logo">
-          <Logo />
-        </div>
-        <div></div>
-      </div>
-      <div class="header-menu mobile" :class="{ opened: opened }" v-scroll-lock="opened">
-        <div class="hamburger-close" @click="opened = false">
-          <div></div>
-          <div></div>
-        </div>
-        <div class="header-menu__links">
-          <ul>
-            <li
-              @click="opened = false"
-              v-for="link in mainLinks"
-              :key="link.name"
-            >
-              <nuxt-link :to="`${link.url}`">{{ link.name }}</nuxt-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    </fixed-header>
   </header>
 </template>
 
 <script>
-import NuxtLogo from "@/components/NuxtLogo.vue";
-import SocialIcons from "@/components/SocialIcons.vue";
-import Logo from "@/components/Logo.vue";
+import FixedHeader from "vue-fixed-header";
 
 export default {
   components: {
-    NuxtLogo,
-    SocialIcons,
-    Logo,
+    FixedHeader,
   },
   data() {
     return {
@@ -78,7 +84,7 @@ export default {
           url: "/services",
         },
         {
-          name: "Before&After",
+          name: "Before & After",
           url: "/beforeafter",
         },
         {
@@ -95,7 +101,24 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_colors.scss";
 @import "@/assets/sass/abstracts/_mixins.scss";
-
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+}
+.navbar.vue-fixed-header--isFixed {
+  .header-top {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  }
+  .header-main {
+    display: none;
+    @include breakpoint($xs) {
+      display: flex;
+    }
+  }
+}
 .mobile {
   display: none !important;
   @include breakpoint($xs) {
@@ -107,6 +130,8 @@ export default {
   background: $secondary;
   position: relative;
   z-index: 10;
+  transition: all 0.4s ease-in;
+
   ul {
     display: flex;
     gap: 2.5rem;
@@ -151,6 +176,7 @@ export default {
 
       svg {
         margin-right: 7px;
+
         path {
           fill: $primary-darker;
         }
@@ -270,7 +296,6 @@ export default {
     &.opened {
       transform: translateY(0);
       transition: all 0.3s ease-in;
-
     }
     &__links {
       display: flex;

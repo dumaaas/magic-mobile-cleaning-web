@@ -41,7 +41,7 @@ app.post('/send', (req, res) => {
   }, function (error) {
     console.error(error);
   });
-
+  next()
 });
 
 module.exports = app;
