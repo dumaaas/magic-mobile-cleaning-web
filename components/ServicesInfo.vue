@@ -12,10 +12,12 @@
         <div class="services-info__right">
           <div class="">
             <img
+              loading="lazy"
               :src="require(`@/static/${service.name}1.png`)"
               alt="interior1"
             />
             <img
+              loading="lazy"
               class="mt-11"
               :src="require(`@/static/${service.name}3.png`)"
               alt="interior1"
@@ -23,10 +25,12 @@
           </div>
           <div class="">
             <img
+              loading="lazy"
               :src="require(`@/static/${service.name}2.png`)"
               alt="interior1"
             />
             <img
+              loading="lazy"
               class="mt-11"
               :src="require(`@/static/${service.name}4.png`)"
               alt="interior1"

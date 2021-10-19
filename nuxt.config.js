@@ -106,6 +106,7 @@ module.exports = {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/fontawesome',
+    
     ['nuxt-mail', {
       message: {
         to: 'markodumnic8@gmail.com',

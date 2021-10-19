@@ -88,6 +88,7 @@
                   </svg>
                 </div>
                 <video
+                  loading="lazy"
                   v-show="showVideo"
                   ref="videoRef"
                   :src="require(`@/static/${videoSrc}.mp4`)"
@@ -96,6 +97,7 @@
                   controls
                 ></video>
                 <img
+                  loading="lazy"
                   v-show="showImage"
                   :src="require(`@/static/${imgSrc}.png`)"
                   width="100%"
@@ -139,6 +141,7 @@
           :key="offer.title"
         >
           <img
+            loading="lazy"
             :src="require(`@/static/${offer.src}`)"
             :alt="`${offer.title}`"
           />
@@ -151,7 +154,7 @@
       <div class="services-cards container">
         <div class="services-cards__card">
           <div class="services-cards__card-left">
-            <img src="@/static/interior.png" alt="Interior" />
+            <img loading=lazy src="@/static/interior.png" alt="Interior" />
           </div>
           <div class="services-cards__card-right">
             <div class="title">
@@ -175,7 +178,7 @@
         </div>
         <div class="services-cards__card">
           <div class="services-cards__card-left revert">
-            <img src="@/static/exterior.png" alt="" />
+            <img loading=lazy src="@/static/exterior.png" alt="" />
           </div>
           <div class="services-cards__card-right revert">
             <div class="title">
@@ -203,16 +206,16 @@
       <div class="gallery-container container desktop">
         <div class="gallery-cards">
           <div class="card img-wrapper" @click="openSlide(4)">
-            <img src="@/static/gallery_img4.png" alt="Before" />
+            <img loading=lazy src="@/static/gallery_img4.png" alt="Before" />
           </div>
           <div class="card video">
             <div class="play-btn" @click="openSlide(1)">
               <fa :icon="['fa', 'play']" />
             </div>
-            <img src="@/static/video6.png" alt="" />
+            <img loading=lazy src="@/static/video6.png" alt="" />
           </div>
           <div class="card img-wrapper" @click="openSlide(5)">
-            <img src="@/static/gallery_img5.png" alt="" />
+            <img loading=lazy src="@/static/gallery_img5.png" alt="" />
           </div>
         </div>
         <div class="gallery-bottom">
@@ -236,7 +239,7 @@
             <div class="play-btn" @click="openSlide(1)">
               <fa :icon="['fa', 'play']" />
             </div>
-            <img src="@/static/indexGalleryImg.png" alt="before" />
+            <img loading=lazy src="@/static/indexGalleryImg.png" alt="before" />
           </div>
         </div>
         <div class="gallery-mobile__btn">
