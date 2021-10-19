@@ -16,6 +16,7 @@
             <div class="mapouter">
               <div class="gmap_canvas">
                 <iframe
+                  title="Magic Mobile Cleaning Map"
                   class="gmap_iframe"
                   width="100%"
                   frameborder="0"
@@ -35,9 +36,7 @@
 </template>
 
 <script>
-
-export default {
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>
