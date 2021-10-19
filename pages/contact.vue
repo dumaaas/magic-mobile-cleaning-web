@@ -36,7 +36,85 @@
 </template>
 
 <script>
-export default {};
+export default {
+  head: {
+    title: "Contact & Book | Magic Mobile Cleaning",
+    htmlAttrs: {
+      lang: "en",
+    },
+    meta: [
+      {
+        charset: "utf-8",
+      },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
+      },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Want to book? Visit our page and fill form so we can contact you.",
+      },
+      {
+        hid: "robots",
+        name: "robots",
+        content: "index, follow",
+      },
+      {
+        hid: "og:type",
+        property: "og:type",
+        content: "website",
+      },
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: "https://magic-mobile-cleaning-8df5a.web.app/contact",
+      },
+      {
+        hid: "og:description",
+        name: "og:description",
+        content:
+          "Want to book? Visit our page and fill form so we can contact you.",
+      },
+      {
+        hid: "og:title",
+        name: "og:title",
+        content: "Contact & Book | Magic Mobile Cleaning",
+      },
+      {
+        hid: "og:image",
+        name: "og:image",
+        content: "/cover.png",
+      },
+      {
+        name: "format-detection",
+        content: "telephone=no",
+      },
+      {
+        hid: "twitter:url",
+        name: "twitter:url",
+        content: "https://magic-mobile-cleaning-8df5a.web.app/contact",
+      },
+      {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "Contact & Book | Magic Mobile Cleaning",
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content:
+          "Want to book? Visit our page and fill form so we can contact you.",
+      },
+      {
+        hid: "twitter:image",
+        name: "twitter:image",
+        content: "/cover.png",
+      },
+    ],
+  },
+};
 </script>
 
 <style lang="scss" scoped>

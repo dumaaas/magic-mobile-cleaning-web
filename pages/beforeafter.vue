@@ -245,6 +245,83 @@
 
 <script>
 export default {
+  head: {
+    title: "Before & After | Magic Mobile Cleaning",
+    htmlAttrs: {
+      lang: "en",
+    },
+    meta: [
+      {
+        charset: "utf-8",
+      },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
+      },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "We bring some photos of our work, so you can take a look and make sure we do a great job!",
+      },
+      {
+        hid: "robots",
+        name: "robots",
+        content: "index, follow",
+      },
+      {
+        hid: "og:type",
+        property: "og:type",
+        content: "website",
+      },
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: "https://magic-mobile-cleaning-8df5a.web.app/beforeafter",
+      },
+      {
+        hid: "og:description",
+        name: "og:description",
+        content:
+          "We bring some photos of our work, so you can take a look and make sure we do a great job!",
+      },
+      {
+        hid: "og:title",
+        name: "og:title",
+        content: "Before & After | Magic Mobile Cleaning",
+      },
+      {
+        hid: "og:image",
+        name: "og:image",
+        content: "/cover.png",
+      },
+      {
+        name: "format-detection",
+        content: "telephone=no",
+      },
+      {
+        hid: "twitter:url",
+        name: "twitter:url",
+        content: "https://magic-mobile-cleaning-8df5a.web.app/beforeafter",
+      },
+      {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "Before & After | Magic Mobile Cleaning",
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content:
+          "We bring some photos of our work, so you can take a look and make sure we do a great job!",
+      },
+      {
+        hid: "twitter:image",
+        name: "twitter:image",
+        content: "/cover.png",
+      },
+    ],
+  },
   data() {
     return {
       videoSrc: "video1",

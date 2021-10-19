@@ -16,8 +16,84 @@
   </div>
 </template>
 <script>
-
 export default {
+  head: {
+    title: "Services | Magic Mobile Cleaning",
+    htmlAttrs: {
+      lang: "en",
+    },
+    meta: [
+      {
+        charset: "utf-8",
+      },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
+      },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Detailing is more than a cleaning process to make a vehicle look good,but a systematic approach to help extend its life with methods and products that reduce damaging environmental elements such as dirt, sun, harsh winters.",
+      },
+      {
+        hid: "robots",
+        name: "robots",
+        content: "index, follow",
+      },
+      {
+        hid: "og:type",
+        property: "og:type",
+        content: "website",
+      },
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: "https://magic-mobile-cleaning-8df5a.web.app/services",
+      },
+      {
+        hid: "og:description",
+        name: "og:description",
+        content:
+          "Detailing is more than a cleaning process to make a vehicle look good,but a systematic approach to help extend its life with methods and products that reduce damaging environmental elements such as dirt, sun, harsh winters.",
+      },
+      {
+        hid: "og:title",
+        name: "og:title",
+        content: "Services | Magic Mobile Cleaning",
+      },
+      {
+        hid: "og:image",
+        name: "og:image",
+        content: "/cover.png",
+      },
+      {
+        name: "format-detection",
+        content: "telephone=no",
+      },
+      {
+        hid: "twitter:url",
+        name: "twitter:url",
+        content: "https://magic-mobile-cleaning-8df5a.web.app/services",
+      },
+      {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "Services | Magic Mobile Cleaning",
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content:
+          "Detailing is more than a cleaning process to make a vehicle look good,but a systematic approach to help extend its life with methods and products that reduce damaging environmental elements such as dirt, sun, harsh winters.",
+      },
+      {
+        hid: "twitter:image",
+        name: "twitter:image",
+        content: "/cover.png",
+      },
+    ],
+  },
   data() {
     return {
       interior: {
