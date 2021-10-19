@@ -170,8 +170,8 @@
               detailing is taking care of everything inside the car.
             </p>
             <div class="desktop">
-              <nuxt-link class="btn ml-auto btn-primary" to="/services"
-                >LEARN MORE</nuxt-link
+              <nuxt-link class="btn ml-auto btn-primary" to="/services" aria-label="Find more about Interior"
+                >SEE MORE</nuxt-link
               >
             </div>
           </div>
@@ -194,8 +194,8 @@
               over a decade!
             </p>
             <div class="desktop">
-              <nuxt-link class="btn btn-secondary" to="/services"
-                >LEARN MORE</nuxt-link
+              <nuxt-link class="btn btn-secondary" to="/services" aria-label="Find more about Enterior"
+                >SEE MORE</nuxt-link
               >
             </div>
           </div>
