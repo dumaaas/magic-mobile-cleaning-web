@@ -232,7 +232,7 @@
       </div>
       <div class="gallery-mobile mobile">
         <div class="gallery-mobile__heading">
-          <h3>Before & After</h3>
+          <h5>Before & After</h5>
         </div>
         <div class="gallery-mobile__images">
           <div class="video">
@@ -729,7 +729,7 @@ export default {
   &-mobile {
     padding: 60px 0;
     &__heading {
-      h3 {
+      h5 {
         padding-bottom: 40px;
         color: $primary-darker;
         text-transform: uppercase;
