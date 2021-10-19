@@ -171,7 +171,7 @@
             </p>
             <div class="desktop">
               <nuxt-link class="btn ml-auto btn-primary" to="/services"
-                >SEE MORE</nuxt-link
+                >LEARN MORE</nuxt-link
               >
             </div>
           </div>
@@ -195,7 +195,7 @@
             </p>
             <div class="desktop">
               <nuxt-link class="btn btn-secondary" to="/services"
-                >SEE MORE</nuxt-link
+                >LEARN MORE</nuxt-link
               >
             </div>
           </div>

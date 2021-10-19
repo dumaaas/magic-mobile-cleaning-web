@@ -5,7 +5,9 @@
       :key="icon.name"
       :href="`${icon.url}`"
       target="_blank"
+      rel="noopener"
       :class="`${icon.name} icon ${mode}`"
+      :aria-label="icon.name"
     >
       <fa :icon="['fab', `${icon.iconName}`]" />
     </a>

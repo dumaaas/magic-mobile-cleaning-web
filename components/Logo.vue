@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-    <nuxt-link to="/">
+    <nuxt-link to="/" aria-label="Home">
       <svg
         version="1.1"
         id="Layer_1"

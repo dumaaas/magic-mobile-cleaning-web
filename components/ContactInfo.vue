@@ -37,6 +37,7 @@
             <a
               href="http://maps.google.com/?q=6071+N+Milwaukee+Ave,+Chicago,+IL+60646,+USA/@41.9926055,-87.7834478,16z/data=!4m5!3m4!1s0x880fc94eb79ddc9b:0x262e504a6233b37f!8m2!3d41.9919332!4d-87.7823384"
               target="_blank"
+              rel="noopener"
             >
               {{ contact.content }}
             </a>
