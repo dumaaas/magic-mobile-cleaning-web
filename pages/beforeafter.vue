@@ -6,8 +6,7 @@
         <div class="modal-mask">
           <div class="modal-wrapper">
             <div class="modal-wrapper__btn" @click="hideSlide">
-              <div></div>
-              <div></div>
+              <fa :icon="['fas', 'times']" />
             </div>
             <div class="modal-container">
               <div class="modal-container__slide">
@@ -125,117 +124,117 @@
             <div class="play-btn" @click="openSlide(1)">
               <fa :icon="['fa', 'play']" />
             </div>
-            <img loading=lazy src="@/static/video1.png" alt="before" />
+            <img loading="lazy" src="@/static/video1.png" alt="before" />
           </div>
           <div class="gallery-pictures__item img-wrapper" @click="openSlide(2)">
-            <img loading=lazy src="@/static/gallery_img2.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img2.png" alt="before" />
           </div>
           <div class="gallery-pictures__item img-wrapper" @click="openSlide(3)">
-            <img loading=lazy src="@/static/gallery_img3.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img3.png" alt="before" />
           </div>
 
           <div class="gallery-pictures__item img-wrapper" @click="openSlide(4)">
-            <img loading=lazy src="@/static/gallery_img4.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img4.png" alt="before" />
           </div>
           <div class="gallery-pictures__item img-wrapper" @click="openSlide(5)">
-            <img loading=lazy src="@/static/gallery_img5.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img5.png" alt="before" />
           </div>
           <div class="gallery-pictures__item video">
             <div class="play-btn" @click="openSlide(6)">
               <fa :icon="['fa', 'play']" />
             </div>
-            <img loading=lazy src="@/static/video6.png" alt="before" />
+            <img loading="lazy" src="@/static/video6.png" alt="before" />
           </div>
 
           <div class="gallery-pictures__item img-wrapper" @click="openSlide(7)">
-            <img loading=lazy src="@/static/gallery_img7.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img7.png" alt="before" />
           </div>
           <div class="gallery-pictures__item img-wrapper" @click="openSlide(8)">
-            <img loading=lazy src="@/static/gallery_img8.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img8.png" alt="before" />
           </div>
           <div class="gallery-pictures__item img-wrapper" @click="openSlide(9)">
-            <img loading=lazy src="@/static/gallery_img9.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img9.png" alt="before" />
           </div>
 
           <div
             class="gallery-pictures__item img-wrapper"
             @click="openSlide(10)"
           >
-            <img loading=lazy src="@/static/gallery_img10.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img10.png" alt="before" />
           </div>
           <div
             class="gallery-pictures__item img-wrapper"
             @click="openSlide(11)"
           >
-            <img loading=lazy src="@/static/gallery_img11.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img11.png" alt="before" />
           </div>
           <div
             class="gallery-pictures__item img-wrapper"
             @click="openSlide(12)"
           >
-            <img loading=lazy src="@/static/gallery_img12.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img12.png" alt="before" />
           </div>
 
           <div class="gallery-pictures__item video">
             <div class="play-btn" @click="openSlide(13)">
               <fa :icon="['fa', 'play']" />
             </div>
-            <img loading=lazy src="@/static/video13.png" alt="before" />
+            <img loading="lazy" src="@/static/video13.png" alt="before" />
           </div>
           <div
             class="gallery-pictures__item img-wrapper"
             @click="openSlide(14)"
           >
-            <img loading=lazy src="@/static/gallery_img14.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img14.png" alt="before" />
           </div>
           <div
             class="gallery-pictures__item img-wrapper"
             @click="openSlide(15)"
           >
-            <img loading=lazy src="@/static/gallery_img15.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img15.png" alt="before" />
           </div>
           <div class="gallery-pictures__item video">
             <div class="play-btn" @click="openSlide(16)">
               <fa :icon="['fa', 'play']" />
             </div>
-            <img loading=lazy src="@/static/video16.png" alt="before" />
+            <img loading="lazy" src="@/static/video16.png" alt="before" />
           </div>
           <div class="gallery-pictures__item video">
             <div class="play-btn" @click="openSlide(17)">
               <fa :icon="['fa', 'play']" />
             </div>
-            <img loading=lazy src="@/static/video17.png" alt="before" />
+            <img loading="lazy" src="@/static/video17.png" alt="before" />
           </div>
           <div
             class="gallery-pictures__item img-wrapper"
             @click="openSlide(18)"
           >
-            <img loading=lazy src="@/static/gallery_img18.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img18.png" alt="before" />
           </div>
 
           <div
             class="gallery-pictures__item img-wrapper"
             @click="openSlide(19)"
           >
-            <img loading=lazy src="@/static/gallery_img19.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img19.png" alt="before" />
           </div>
           <div
             class="gallery-pictures__item img-wrapper"
             @click="openSlide(20)"
           >
-            <img loading=lazy src="@/static/gallery_img20.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img20.png" alt="before" />
           </div>
           <div
             class="gallery-pictures__item img-wrapper"
             @click="openSlide(21)"
           >
-            <img loading=lazy src="@/static/gallery_img21.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img21.png" alt="before" />
           </div>
           <div
             class="gallery-pictures__item mobile img-wrapper"
             @click="openSlide(22)"
           >
-            <img loading=lazy src="@/static/gallery_img22.png" alt="before" />
+            <img loading="lazy" src="@/static/gallery_img22.png" alt="before" />
           </div>
         </div>
       </div>

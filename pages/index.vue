@@ -6,8 +6,7 @@
         <div class="modal-mask">
           <div class="modal-wrapper">
             <div class="modal-wrapper__btn" @click="hideSlide">
-              <div></div>
-              <div></div>
+              <fa :icon="['fas', 'times']" />
             </div>
             <div class="modal-container">
               <div class="modal-container__slide">
@@ -154,7 +153,7 @@
       <div class="services-cards container">
         <div class="services-cards__card">
           <div class="services-cards__card-left">
-            <img loading=lazy src="@/static/interior.png" alt="Interior" />
+            <img loading="lazy" src="@/static/interior.png" alt="Interior" />
           </div>
           <div class="services-cards__card-right">
             <div class="title">
@@ -170,7 +169,10 @@
               detailing is taking care of everything inside the car.
             </p>
             <div class="desktop">
-              <nuxt-link class="btn ml-auto btn-primary" to="/services" aria-label="Find more about Interior"
+              <nuxt-link
+                class="btn ml-auto btn-primary"
+                to="/services"
+                aria-label="Find more about Interior"
                 >SEE MORE</nuxt-link
               >
             </div>
@@ -178,7 +180,7 @@
         </div>
         <div class="services-cards__card">
           <div class="services-cards__card-left revert">
-            <img loading=lazy src="@/static/exterior.png" alt="" />
+            <img loading="lazy" src="@/static/exterior.png" alt="" />
           </div>
           <div class="services-cards__card-right revert">
             <div class="title">
@@ -194,7 +196,10 @@
               over a decade!
             </p>
             <div class="desktop">
-              <nuxt-link class="btn btn-secondary" to="/services" aria-label="Find more about Enterior"
+              <nuxt-link
+                class="btn btn-secondary"
+                to="/services"
+                aria-label="Find more about Enterior"
                 >SEE MORE</nuxt-link
               >
             </div>
@@ -206,16 +211,16 @@
       <div class="gallery-container container desktop">
         <div class="gallery-cards">
           <div class="card img-wrapper" @click="openSlide(4)">
-            <img loading=lazy src="@/static/gallery_img4.png" alt="Before" />
+            <img loading="lazy" src="@/static/gallery_img4.png" alt="Before" />
           </div>
           <div class="card video">
             <div class="play-btn" @click="openSlide(1)">
               <fa :icon="['fa', 'play']" />
             </div>
-            <img loading=lazy src="@/static/video6.png" alt="" />
+            <img loading="lazy" src="@/static/video6.png" alt="" />
           </div>
           <div class="card img-wrapper" @click="openSlide(5)">
-            <img loading=lazy src="@/static/gallery_img5.png" alt="" />
+            <img loading="lazy" src="@/static/gallery_img5.png" alt="" />
           </div>
         </div>
         <div class="gallery-bottom">
@@ -239,7 +244,11 @@
             <div class="play-btn" @click="openSlide(1)">
               <fa :icon="['fa', 'play']" />
             </div>
-            <img loading=lazy src="@/static/indexGalleryImg.png" alt="before" />
+            <img
+              loading="lazy"
+              src="@/static/indexGalleryImg.png"
+              alt="before"
+            />
           </div>
         </div>
         <div class="gallery-mobile__btn">

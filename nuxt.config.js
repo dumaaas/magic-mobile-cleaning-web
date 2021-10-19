@@ -125,7 +125,7 @@ module.exports = {
   fontawesome: {
     component: 'fa',
     icons: {
-      solid: ['faPhoneAlt', 'faMapMarkerAlt', 'faEnvelope', 'faPlay'],
+      solid: ['faPhoneAlt', 'faMapMarkerAlt', 'faEnvelope', 'faPlay', 'faTimes'],
       brands: ['faFacebookF', 'faInstagram', 'faYoutube'],
       regular: ['faClock'],
     }
