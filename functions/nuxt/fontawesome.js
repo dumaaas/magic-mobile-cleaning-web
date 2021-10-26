@@ -10,7 +10,8 @@ import {
   faPhoneAlt as freeFasFaPhoneAlt,
   faMapMarkerAlt as freeFasFaMapMarkerAlt,
   faEnvelope as freeFasFaEnvelope,
-  faPlay as freeFasFaPlay
+  faPlay as freeFasFaPlay,
+  faTimes as freeFasFaTimes
 } from '@fortawesome/free-solid-svg-icons'
 
 import {
@@ -28,6 +29,7 @@ library.add(
   freeFasFaMapMarkerAlt,
   freeFasFaEnvelope,
   freeFasFaPlay,
+  freeFasFaTimes,
   freeFabFaFacebookF,
   freeFabFaInstagram,
   freeFabFaYoutube,

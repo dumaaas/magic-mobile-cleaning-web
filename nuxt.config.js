@@ -82,6 +82,14 @@ module.exports = {
     }]
   },
 
+  loading: {
+    color: '#19A3A6',
+    height: '3px',
+    duration: 3000,
+    throttle: 0,
+    continuous: true,
+  },
+
   serverMiddleware: [{
     path: 'api',
     handler: '~/serverMiddleware/api'
@@ -165,7 +173,4 @@ module.exports = {
     vendor: ['vue-swal']
   },
 
-  loading: {
-    color: '#3B8070'
-  },
 }

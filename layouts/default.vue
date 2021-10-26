@@ -1,5 +1,6 @@
 <template>
   <div>
+    <LoadSpinner v-if="showHideSpinner" />
     <Header />
     <div class="all">
       <Nuxt />
@@ -11,11 +12,23 @@
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
-
+import LoadSpinner from "@/components/LoadSpinner.vue";
 export default {
   components: {
     Footer,
     Header,
+    LoadSpinner
+  },
+  data() {
+    return {
+      showHideSpinner: true,
+    };
+  },
+  beforeCreate() {
+    this.showHideSpinner = true;
+  },
+  mounted() {
+    this.showHideSpinner = false;
   },
 };
 </script>

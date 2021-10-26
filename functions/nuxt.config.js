@@ -4,7 +4,7 @@ module.exports = {
   debug: true,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'magic-mobile-cleaning',
+    title: 'Magic Mobile Cleaning –  Proffesional car detailing services',
     htmlAttrs: {
       lang: 'en'
     },
@@ -18,17 +18,67 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: ''
+        content: "If you love your car, we will make it shine! Proffesional detailing keeps the vehicle in it's best possible condition."
+      },
+      {
+        hid: 'robots',
+        name: 'robots',
+        content: 'index, follow'
+      },
+      {
+        hid: "og:type",
+        property: "og:type",
+        content: "website"
+      },
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: "https://magic-mobile-cleaning-8df5a.web.app",
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: "If you love your car, we will make it shine! Proffesional detailing keeps the vehicle in it's best possible condition."
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: 'Magic Mobile Cleaning –  Proffesional car detailing services'
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content: '/cover.png'
       },
       {
         name: 'format-detection',
         content: 'telephone=no'
-      }
+      },
+      {
+        hid: "twitter:url",
+        name: "twitter:url",
+        content: "https://magic-mobile-cleaning-8df5a.web.app",
+      },
+      {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "Magic Mobile Cleaning –  Proffesional car detailing services",
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content: "If you love your car, we will make it shine! Proffesional detailing keeps the vehicle in it's best possible condition.",
+      },
+      {
+        hid: "twitter:image",
+        name: "twitter:image",
+        content: "/cover.png",
+      },
     ],
     link: [{
       rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
+      type: 'image/svg+xml',
+      href: '/logo.svg'
     }]
   },
 
@@ -56,6 +106,8 @@ module.exports = {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/fontawesome',
+    '@nuxtjs/sitemap',
+
     ['nuxt-mail', {
       message: {
         to: 'markodumnic8@gmail.com',
@@ -71,10 +123,36 @@ module.exports = {
     }],
   ],
 
+  sitemap: {
+    hostname: 'http://localhost:3000',
+    gzip: true,
+    defaults: {
+      changefreq: 'daily',
+      priority: 1,
+      lastmod: new Date()
+    },
+    i18n: true,
+    filter({ routes }) {
+        return routes.map(route => {
+            const routeName = route.name.replace(/___.{0,}/, '') // remove i18n locale suffix
+            // object containing [routeName]: [priority] pairs
+            const priorities = {
+                index: 1,
+                beforeafter: 0.6,
+                contact: 0.8,
+                services: 0.8
+            }
+            
+            // assign priority by route name without locale suffix or default (.5)
+            return { ...route, priority: priorities[routeName] || 0.5 }
+        })
+    },
+  },
+
   fontawesome: {
     component: 'fa',
     icons: {
-      solid: ['faPhoneAlt', 'faMapMarkerAlt', 'faEnvelope', 'faPlay'],
+      solid: ['faPhoneAlt', 'faMapMarkerAlt', 'faEnvelope', 'faPlay', 'faTimes'],
       brands: ['faFacebookF', 'faInstagram', 'faYoutube'],
       regular: ['faClock'],
     }
