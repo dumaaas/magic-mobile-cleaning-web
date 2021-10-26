@@ -63,11 +63,6 @@ export default {
         content: "Services | Magic Mobile Cleaning",
       },
       {
-        hid: "og:image",
-        name: "og:image",
-        content: "/cover.png",
-      },
-      {
         name: "format-detection",
         content: "telephone=no",
       },
@@ -86,11 +81,6 @@ export default {
         name: "twitter:description",
         content:
           "Detailing is more than a cleaning process to make a vehicle look good,but a systematic approach to help extend its life with methods and products that reduce damaging environmental elements such as dirt, sun, harsh winters.",
-      },
-      {
-        hid: "twitter:image",
-        name: "twitter:image",
-        content: "/cover.png",
       },
     ],
   },

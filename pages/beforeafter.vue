@@ -291,11 +291,6 @@ export default {
         content: "Before & After | Magic Mobile Cleaning",
       },
       {
-        hid: "og:image",
-        name: "og:image",
-        content: "/cover.png",
-      },
-      {
         name: "format-detection",
         content: "telephone=no",
       },
@@ -314,11 +309,6 @@ export default {
         name: "twitter:description",
         content:
           "We bring some photos of our work, so you can take a look and make sure we do a great job!",
-      },
-      {
-        hid: "twitter:image",
-        name: "twitter:image",
-        content: "/cover.png",
       },
     ],
   },

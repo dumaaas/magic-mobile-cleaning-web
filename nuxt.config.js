@@ -55,6 +55,21 @@ module.exports = {
         content: 'telephone=no'
       },
       {
+        name: 'twitter:card',
+        hid = 'twitter:card',
+        content: 'Magic Mobile Cleaning'
+      },
+      {
+        name: 'twitter:site',
+        hid = 'twitter:side',
+        content: '@app'
+      },
+      {
+        property: 'twitter:domain',
+        hid = 'twitter:domain',
+        content: 'magic-mobile-cleaning.netlify.app/'
+      },
+      {
         hid: "twitter:url",
         name: "twitter:url",
         content: "https://magic-mobile-cleaning-8df5a.web.app",
@@ -140,20 +155,25 @@ module.exports = {
       lastmod: new Date()
     },
     i18n: true,
-    filter({ routes }) {
-        return routes.map(route => {
-            const routeName = route.name.replace(/___.{0,}/, '') // remove i18n locale suffix
-            // object containing [routeName]: [priority] pairs
-            const priorities = {
-                index: 1,
-                beforeafter: 0.6,
-                contact: 0.8,
-                services: 0.8
-            }
-            
-            // assign priority by route name without locale suffix or default (.5)
-            return { ...route, priority: priorities[routeName] || 0.5 }
-        })
+    filter({
+      routes
+    }) {
+      return routes.map(route => {
+        const routeName = route.name.replace(/___.{0,}/, '') // remove i18n locale suffix
+        // object containing [routeName]: [priority] pairs
+        const priorities = {
+          index: 1,
+          beforeafter: 0.6,
+          contact: 0.8,
+          services: 0.8
+        }
+
+        // assign priority by route name without locale suffix or default (.5)
+        return {
+          ...route,
+          priority: priorities[routeName] || 0.5
+        }
+      })
     },
   },
 
