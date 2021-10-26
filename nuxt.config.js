@@ -48,7 +48,7 @@ module.exports = {
       {
         hid: 'og:image',
         name: 'og:image',
-        content: '/cover.png'
+        content: '/og-image.jpg'
       },
       {
         name: 'format-detection',
@@ -72,13 +72,13 @@ module.exports = {
       {
         hid: "twitter:image",
         name: "twitter:image",
-        content: "/cover.png",
+        content: "/og-image.jpg",
       },
     ],
     link: [{
       rel: 'icon',
-      type: 'image/svg+xml',
-      href: '/logo.svg'
+      type: 'image/x-icon',
+      href: '/favicon.ico'
     }]
   },
 
