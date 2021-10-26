@@ -82,11 +82,11 @@ export default {
         name: "og:title",
         content: "Contact & Book | Magic Mobile Cleaning",
       },
-      {
-        hid: "og:image",
-        name: "og:image",
-        content: "/cover.png",
-      },
+      // {
+      //   hid: "og:image",
+      //   name: "og:image",
+      //   content: "/cover.png",
+      // },
       {
         name: "format-detection",
         content: "telephone=no",
@@ -107,11 +107,11 @@ export default {
         content:
           "Want to book? Visit our page and fill form so we can contact you.",
       },
-      {
-        hid: "twitter:image",
-        name: "twitter:image",
-        content: "/cover.png",
-      },
+      // {
+      //   hid: "twitter:image",
+      //   name: "twitter:image",
+      //   content: "/cover.png",
+      // },
     ],
   },
 };
