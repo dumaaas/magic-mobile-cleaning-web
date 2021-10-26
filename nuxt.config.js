@@ -56,17 +56,17 @@ module.exports = {
       },
       {
         name: 'twitter:card',
-        hid = 'twitter:card',
+        hid: 'twitter:card',
         content: 'Magic Mobile Cleaning'
       },
       {
         name: 'twitter:site',
-        hid = 'twitter:side',
+        hid: 'twitter:side',
         content: '@app'
       },
       {
         property: 'twitter:domain',
-        hid = 'twitter:domain',
+        hid: 'twitter:domain',
         content: 'magic-mobile-cleaning.netlify.app/'
       },
       {
