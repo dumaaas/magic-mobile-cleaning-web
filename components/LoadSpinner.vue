@@ -8,7 +8,7 @@
 
 <style scoped>
 .splash-screen {
-  background: #19A3A6;
+  background: #f2f0ee;
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -26,7 +26,7 @@
   width: 80px;
   height: 80px;
   margin: 100px auto;
-  background-color: #e45447;
+  background-color: #19A3A6;
 
   border-radius: 100%;
   -webkit-animation: sk-scaleout 1s infinite ease-in-out;
